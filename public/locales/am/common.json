@@ -1,0 +1,87 @@
+{
+  "app": { "name": "የመንጃ ትምህርት ቤት" },
+  "nav": {
+    "dashboard": "ዳሽቦርድ",
+    "learners": "ተማሪዎች",
+    "instructors": "አስተማሪዎች",
+    "vehicles": "ተሽከርካሪዎች",
+    "lessons": "ትምህርቶች",
+    "finance": "ፋይናንስ",
+    "certificates": "ሰርተፍኬቶች",
+    "settings": "ቅንብሮች"
+  },
+  "action": {
+    "signOut": "ውጣ",
+    "backHome": "ወደ መነሻ ተመለስ"
+  },
+  "auth": {
+    "signInTitle": "ግባ",
+    "signInSubtitle": "ትምህርት ቤትዎን ለመድረስ መረጃዎን ያስገቡ።",
+    "email": "ኢሜይል",
+    "password": "የይለፍ ቃል",
+    "signIn": "ግባ",
+    "signingIn": "በመግባት ላይ…"
+  },
+  "dashboard": {
+    "subtitle": "የመንጃ ትምህርት ቤትዎ አጠቃላይ እይታ።",
+    "actionCenter": "የተግባር ማዕከል",
+    "actionCenterSubtitle": "ትኩረት የሚሹ ተግባራት።",
+    "actionCenterEmpty": "ሁሉንም አጠናቀዋል።",
+    "noTenant": "ከመለያዎ ጋር የተገናኘ ትምህርት ቤት የለም።"
+  },
+  "stats": {
+    "activeLearners": "ንቁ ተማሪዎች",
+    "lessonsToday": "የዛሬ ትምህርቶች",
+    "instructors": "አስተማሪዎች",
+    "revenueMtd": "ገቢ (ወሩ)"
+  },
+  "module": {
+    "comingSoon": "ይህ ክፍል የመድረኩ ዕቅድ አካል ሲሆን በቀጣይ ይገነባል።"
+  },
+  "learners": { "subtitle": "የተማሪ መገለጫዎችን፣ ምዝገባዎችን እና እድገትን ያስተዳድሩ።" },
+  "instructors": { "subtitle": "አስተማሪዎችን፣ ማረጋገጫዎችን እና ተገኝነትን ያስተዳድሩ።" },
+  "vehicles": { "subtitle": "መኪኖችን፣ ጥገናን እና ሰነዶችን ያስተዳድሩ።" },
+  "lessons": { "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።" },
+  "finance": { "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።" },
+  "certificates": { "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።" },
+  "settings": { "subtitle": "የትምህርት ቤት ውቅር፣ ቅርንጫፎች እና ብራንድ።" },
+  "publicReg": {
+    "title": "ፍላጎትዎን ያስመዝግቡ",
+    "subtitle": "ወደ {{school}} የመንጃ ትምህርት ቤት ያመልክቱ።",
+    "fullName": "ሙሉ ስም",
+    "phone": "ስልክ ቁጥር",
+    "dob": "የልደት ቀን",
+    "submit": "ማመልከቻ አስገባ"
+  },
+  "forbidden": {
+    "title": "መዳረሻ ተከልክሏል",
+    "subtitle": "ይህን ገጽ ለማየት ፈቃድ የለዎትም።"
+  },
+  "notFound": {
+    "title": "ገጹ አልተገኘም",
+    "subtitle": "የሚፈልጉት ገጽ የለም።"
+  },
+  "errors": {
+    "VALIDATION_FAILED": "እባክዎ የተመለከቱትን መስኮች ያረጋግጡ።",
+    "UNAUTHENTICATED": "ክፍለ ጊዜዎ አልቋል። እባክዎ እንደገና ይግቡ።",
+    "FORBIDDEN": "ይህን ለማድረግ ፈቃድ የለዎትም።",
+    "TENANT_SUSPENDED": "የዚህ ትምህርት ቤት መለያ ታግዷል።",
+    "USER_DISABLED": "መለያዎ ተሰናክሏል።",
+    "NOT_FOUND": "አልተገኘም።",
+    "SCHED_CONFLICT": "ያ የጊዜ ክፍተት ካለ ቀጠሮ ጋር ይጋጫል።",
+    "LEARNER_DOUBLE_BOOKED": "ይህ ተማሪ በዚያ ሰዓት አስቀድሞ ተይዟል።",
+    "TEMPLATE_VERSION_CONFLICT": "ይህ አብነት በሌላ ሰው ተቀይሯል።",
+    "LESSON_ALREADY_COMPLETED": "ይህ ትምህርት አስቀድሞ ተጠናቋል።",
+    "INVOICE_ALREADY_SETTLED": "ይህ ደረሰኝ አስቀድሞ ተከፍሏል።",
+    "INVITE_EXISTS": "ለዚህ ኢሜይል በመጠባበቅ ላይ ያለ ግብዣ አለ።",
+    "LAST_ADMIN_GUARD": "የመጨረሻውን የትምህርት ቤት አስተዳዳሪ ማሰናከል አይችሉም።",
+    "PLAN_LIMIT_REACHED": "የዕቅድዎ ገደብ ደርሷል።",
+    "HOUR_BANK_EXHAUSTED": "ለዚህ ምዝገባ የቀሩ የትምህርት ሰዓቶች የሉም።",
+    "VEHICLE_DOC_EXPIRED": "የዚህ ተሽከርካሪ ሰነዶች ጊዜያቸው አልፏል።",
+    "TEMPLATE_TOKEN_UNRESOLVED": "አብነቱ ያልታወቁ የውሂብ ማስመሪያዎችን ይዟል።",
+    "PRINT_DEVICE_INVALID": "ይህ የህትመት መሳሪያ አልታወቀም።",
+    "RATE_LIMITED": "በጣም ብዙ ሙከራዎች። እባክዎ ጠብቀው እንደገና ይሞክሩ።",
+    "PROVIDER_UNAVAILABLE": "የክፍያ አቅራቢው አይገኝም። ጥቂት ቆይተው ይሞክሩ።",
+    "INTERNAL": "የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።"
+  }
+}

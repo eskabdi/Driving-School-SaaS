@@ -1,0 +1,87 @@
+{
+  "app": { "name": "Mana Barumsa Konkolaataa" },
+  "nav": {
+    "dashboard": "Daashboordii",
+    "learners": "Barattoota",
+    "instructors": "Barsiisota",
+    "vehicles": "Konkolaattota",
+    "lessons": "Barnoota",
+    "finance": "Faayinaansii",
+    "certificates": "Ragaalee",
+    "settings": "Qindaa'ina"
+  },
+  "action": {
+    "signOut": "Ba'i",
+    "backHome": "Gara jalqabaatti deebi'i"
+  },
+  "auth": {
+    "signInTitle": "Seeni",
+    "signInSubtitle": "Mana barumsa keessan seenuuf odeeffannoo keessan galchaa.",
+    "email": "Imeelii",
+    "password": "Jecha darbii",
+    "signIn": "Seeni",
+    "signingIn": "Seenaa jira…"
+  },
+  "dashboard": {
+    "subtitle": "Ilaalcha waliigalaa mana barumsa konkolaataa keessanii.",
+    "actionCenter": "Wiirtuu Hojii",
+    "actionCenterSubtitle": "Hojiiwwan xiyyeeffannoo barbaadan.",
+    "actionCenterEmpty": "Hunda xumurteetta.",
+    "noTenant": "Manni barumsaa herrega keessan waliin walitti hin hidhamne."
+  },
+  "stats": {
+    "activeLearners": "Barattoota sochii qaban",
+    "lessonsToday": "Barnoota har'aa",
+    "instructors": "Barsiisota",
+    "revenueMtd": "Galii (ji'a kana)"
+  },
+  "module": {
+    "comingSoon": "Kutaan kun kutaa karoora waltajjii yoo ta'u itti aansuun ni ijaarama."
+  },
+  "learners": { "subtitle": "Ibsa barattootaa, galmee fi guddina bulchi." },
+  "instructors": { "subtitle": "Barsiisota, ragaa fi argamuu bulchi." },
+  "vehicles": { "subtitle": "Konkolaattota, suphaa fi galmeewwan bulchi." },
+  "lessons": { "subtitle": "Barnoota yaadaa fi hojii qopheessi." },
+  "finance": { "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa." },
+  "certificates": { "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi." },
+  "settings": { "subtitle": "Qindaa'ina mana barumsaa, damee fi mallattoo." },
+  "publicReg": {
+    "title": "Fedhii kee galmeessi",
+    "subtitle": "Gara mana barumsa konkolaataa {{school}} galmaa'i.",
+    "fullName": "Maqaa guutuu",
+    "phone": "Lakkoofsa bilbilaa",
+    "dob": "Guyyaa dhalootaa",
+    "submit": "Iyyannoo galchi"
+  },
+  "forbidden": {
+    "title": "Seensi dhorkameera",
+    "subtitle": "Fuula kana ilaaluuf hayyama hin qabdu."
+  },
+  "notFound": {
+    "title": "Fuulli hin argamne",
+    "subtitle": "Fuulli ati barbaaddu hin jiru."
+  },
+  "errors": {
+    "VALIDATION_FAILED": "Maaloo dirreewwan mallattaa'an ilaali.",
+    "UNAUTHENTICATED": "Yeroon kee dhumateera. Maaloo irra deebi'ii seeni.",
+    "FORBIDDEN": "Kana gochuuf hayyama hin qabdu.",
+    "TENANT_SUSPENDED": "Herregni mana barumsaa kanaa uggurameera.",
+    "USER_DISABLED": "Herregni kee dhaabbateera.",
+    "NOT_FOUND": "Hin argamne.",
+    "SCHED_CONFLICT": "Yeroon sun beellama jiru waliin walitti bu'a.",
+    "LEARNER_DOUBLE_BOOKED": "Barataan kun yeroo sanatti duraan galmaa'eera.",
+    "TEMPLATE_VERSION_CONFLICT": "Faakiin kun nama biraatiin jijjiirameera.",
+    "LESSON_ALREADY_COMPLETED": "Barnoonni kun duraan xumurameera.",
+    "INVOICE_ALREADY_SETTLED": "Nagaheen kun duraan kaffalameera.",
+    "INVITE_EXISTS": "Imeelii kanaaf afeerraan eegaa jiru jira.",
+    "LAST_ADMIN_GUARD": "Bulchaa mana barumsaa isa dhumaa dhaabuu hin dandeessu.",
+    "PLAN_LIMIT_REACHED": "Daangaan karoora keetii ga'eera.",
+    "HOUR_BANK_EXHAUSTED": "Galmee kanaaf sa'aatiiwwan barnootaa hin hafne.",
+    "VEHICLE_DOC_EXPIRED": "Galmeewwan konkolaataa kanaa yeroon isaanii dabreera.",
+    "TEMPLATE_TOKEN_UNRESOLVED": "Faakiin mallattoolee daataa hin beekamne qaba.",
+    "PRINT_DEVICE_INVALID": "Meeshaan maxxansaa kun hin beekamne.",
+    "RATE_LIMITED": "Yaaliin baay'ee. Maaloo eegii irra deebi'i.",
+    "PROVIDER_UNAVAILABLE": "Dhiyeessaan kaffaltii hin argamu. Xiqqoo booda yaali.",
+    "INTERNAL": "Wanti tokko dogoggoreera. Maaloo irra deebi'i."
+  }
+}

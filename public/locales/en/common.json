@@ -1,0 +1,87 @@
+{
+  "app": { "name": "Driving School" },
+  "nav": {
+    "dashboard": "Dashboard",
+    "learners": "Learners",
+    "instructors": "Instructors",
+    "vehicles": "Vehicles",
+    "lessons": "Lessons",
+    "finance": "Finance",
+    "certificates": "Certificates",
+    "settings": "Settings"
+  },
+  "action": {
+    "signOut": "Sign out",
+    "backHome": "Back to home"
+  },
+  "auth": {
+    "signInTitle": "Sign in",
+    "signInSubtitle": "Enter your credentials to access your school.",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…"
+  },
+  "dashboard": {
+    "subtitle": "Overview of your driving school.",
+    "actionCenter": "Action Center",
+    "actionCenterSubtitle": "Tasks that need your attention.",
+    "actionCenterEmpty": "You're all caught up.",
+    "noTenant": "No school is linked to your account yet."
+  },
+  "stats": {
+    "activeLearners": "Active learners",
+    "lessonsToday": "Lessons today",
+    "instructors": "Instructors",
+    "revenueMtd": "Revenue (MTD)"
+  },
+  "module": {
+    "comingSoon": "This module is part of the platform blueprint and will be built out next."
+  },
+  "learners": { "subtitle": "Manage learner profiles, enrollments, and progress." },
+  "instructors": { "subtitle": "Manage instructors, certifications, and availability." },
+  "vehicles": { "subtitle": "Manage the fleet, maintenance, and documents." },
+  "lessons": { "subtitle": "Schedule and deliver theory and practical lessons." },
+  "finance": { "subtitle": "Invoices, payments, and refunds." },
+  "certificates": { "subtitle": "Issue and verify certificates and ID cards." },
+  "settings": { "subtitle": "School configuration, branches, and branding." },
+  "publicReg": {
+    "title": "Register your interest",
+    "subtitle": "Apply to {{school}} driving school.",
+    "fullName": "Full name",
+    "phone": "Phone number",
+    "dob": "Date of birth",
+    "submit": "Submit application"
+  },
+  "forbidden": {
+    "title": "Access denied",
+    "subtitle": "You don't have permission to view this page."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The page you're looking for doesn't exist."
+  },
+  "errors": {
+    "VALIDATION_FAILED": "Please check the highlighted fields.",
+    "UNAUTHENTICATED": "Your session has expired. Please sign in again.",
+    "FORBIDDEN": "You don't have permission to do that.",
+    "TENANT_SUSPENDED": "This school's account is suspended.",
+    "USER_DISABLED": "Your account has been disabled.",
+    "NOT_FOUND": "Not found.",
+    "SCHED_CONFLICT": "That time slot conflicts with an existing booking.",
+    "LEARNER_DOUBLE_BOOKED": "This learner is already booked at that time.",
+    "TEMPLATE_VERSION_CONFLICT": "This template was changed by someone else.",
+    "LESSON_ALREADY_COMPLETED": "This lesson has already been completed.",
+    "INVOICE_ALREADY_SETTLED": "This invoice was already settled.",
+    "INVITE_EXISTS": "A pending invitation already exists for this email.",
+    "LAST_ADMIN_GUARD": "You can't disable the last school administrator.",
+    "PLAN_LIMIT_REACHED": "Your plan limit has been reached.",
+    "HOUR_BANK_EXHAUSTED": "No lesson hours remaining for this enrollment.",
+    "VEHICLE_DOC_EXPIRED": "This vehicle's documents have expired.",
+    "TEMPLATE_TOKEN_UNRESOLVED": "The template contains unknown data tokens.",
+    "PRINT_DEVICE_INVALID": "This print device is not recognized.",
+    "RATE_LIMITED": "Too many attempts. Please wait and try again.",
+    "PROVIDER_UNAVAILABLE": "The payment provider is unavailable. Try again shortly.",
+    "INTERNAL": "Something went wrong. Please try again."
+  }
+}
