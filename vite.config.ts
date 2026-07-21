@@ -13,4 +13,18 @@ export default defineConfig({
   server: {
     port: 5173,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Split large, stable vendor libs into their own chunks so app code
+        // changes don't bust their cache (blueprint §11).
+        manualChunks: {
+          react: ['react', 'react-dom', 'react-router-dom'],
+          supabase: ['@supabase/supabase-js'],
+          i18n: ['i18next', 'react-i18next', 'i18next-browser-languagedetector', 'i18next-http-backend'],
+          query: ['@tanstack/react-query'],
+        },
+      },
+    },
+  },
 });
