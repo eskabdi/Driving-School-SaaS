@@ -4,6 +4,7 @@
     "dashboard": "Dashboard",
     "learners": "Learners",
     "registrations": "Registrations",
+    "packages": "Packages",
     "instructors": "Instructors",
     "vehicles": "Vehicles",
     "lessons": "Lessons",
@@ -43,7 +44,38 @@
   "learners": {
     "subtitle": "Manage learner profiles, enrollments, and progress.",
     "empty": "No learners yet. Convert a registration to add your first learner.",
+    "enroll": "Enroll",
     "col": { "name": "Name", "phone": "Phone", "category": "Category", "branch": "Branch" }
+  },
+  "packages": {
+    "subtitle": "Course packages: hours, price, and validity.",
+    "new": "New package",
+    "empty": "No packages yet. Create one to start enrolling learners.",
+    "name": "Name",
+    "category": "License category",
+    "hours": "Hours",
+    "price": "Price (ETB)",
+    "validity": "Validity (days)",
+    "transmission": "Transmission",
+    "transAny": "Any",
+    "transManual": "Manual",
+    "transAuto": "Automatic",
+    "createTitle": "New course package",
+    "createSubtitle": "Define the hours, price, and validity for this package.",
+    "create": "Create",
+    "creating": "Creating…"
+  },
+  "enroll": {
+    "title": "Enroll learner",
+    "subtitle": "Enroll {{name}} in a course package.",
+    "package": "Course package",
+    "selectPackage": "Select a package…",
+    "noPackages": "No active packages. Create one under Packages first.",
+    "packageRequired": "Please select a package.",
+    "confirm": "Enroll",
+    "enrolling": "Enrolling…",
+    "success": "Learner enrolled. A first invoice has been issued.",
+    "invoiceNumber": "Invoice"
   },
   "reviewQueue": {
     "title": "Registration Review",

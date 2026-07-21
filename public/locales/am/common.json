@@ -4,6 +4,7 @@
     "dashboard": "ዳሽቦርድ",
     "learners": "ተማሪዎች",
     "registrations": "ምዝገባዎች",
+    "packages": "ጥቅሎች",
     "instructors": "አስተማሪዎች",
     "vehicles": "ተሽከርካሪዎች",
     "lessons": "ትምህርቶች",
@@ -43,7 +44,38 @@
   "learners": {
     "subtitle": "የተማሪ መገለጫዎችን፣ ምዝገባዎችን እና እድገትን ያስተዳድሩ።",
     "empty": "እስካሁን ተማሪ የለም። የመጀመሪያ ተማሪዎን ለመጨመር ምዝገባን ይለውጡ።",
+    "enroll": "መዝግብ",
     "col": { "name": "ስም", "phone": "ስልክ", "category": "ደረጃ", "branch": "ቅርንጫፍ" }
+  },
+  "packages": {
+    "subtitle": "የኮርስ ጥቅሎች፡ ሰዓቶች፣ ዋጋ እና ተቀባይነት።",
+    "new": "አዲስ ጥቅል",
+    "empty": "እስካሁን ጥቅል የለም። ተማሪዎችን ለመመዝገብ አንድ ይፍጠሩ።",
+    "name": "ስም",
+    "category": "የፍቃድ ደረጃ",
+    "hours": "ሰዓቶች",
+    "price": "ዋጋ (ብር)",
+    "validity": "ተቀባይነት (ቀናት)",
+    "transmission": "ማስተላለፊያ",
+    "transAny": "ማንኛውም",
+    "transManual": "ማንዋል",
+    "transAuto": "አውቶማቲክ",
+    "createTitle": "አዲስ የኮርስ ጥቅል",
+    "createSubtitle": "ለዚህ ጥቅል ሰዓቶች፣ ዋጋ እና ተቀባይነት ይግለጹ።",
+    "create": "ፍጠር",
+    "creating": "በመፍጠር ላይ…"
+  },
+  "enroll": {
+    "title": "ተማሪ መዝግብ",
+    "subtitle": "{{name}}ን በኮርስ ጥቅል ይመዝግቡ።",
+    "package": "የኮርስ ጥቅል",
+    "selectPackage": "ጥቅል ይምረጡ…",
+    "noPackages": "ንቁ ጥቅል የለም። መጀመሪያ በጥቅሎች ውስጥ አንድ ይፍጠሩ።",
+    "packageRequired": "እባክዎ ጥቅል ይምረጡ።",
+    "confirm": "መዝግብ",
+    "enrolling": "በመመዝገብ ላይ…",
+    "success": "ተማሪው ተመዝግቧል። የመጀመሪያ ደረሰኝ ወጥቷል።",
+    "invoiceNumber": "ደረሰኝ"
   },
   "reviewQueue": {
     "title": "የምዝገባ ግምገማ",

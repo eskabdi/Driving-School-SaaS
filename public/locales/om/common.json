@@ -4,6 +4,7 @@
     "dashboard": "Daashboordii",
     "learners": "Barattoota",
     "registrations": "Galmeewwan",
+    "packages": "Paakejii",
     "instructors": "Barsiisota",
     "vehicles": "Konkolaattota",
     "lessons": "Barnoota",
@@ -43,7 +44,38 @@
   "learners": {
     "subtitle": "Ibsa barattootaa, galmee fi guddina bulchi.",
     "empty": "Hanga ammaatti barataan hin jiru. Barataa jalqabaa dabaluuf galmee jijjiiri.",
+    "enroll": "Galmeessi",
     "col": { "name": "Maqaa", "phone": "Bilbila", "category": "Sadarkaa", "branch": "Damee" }
+  },
+  "packages": {
+    "subtitle": "Paakejii koorsii: sa'aatii, gatii fi yeroo dh.",
+    "new": "Paakejii haaraa",
+    "empty": "Hanga ammaatti paakejiin hin jiru. Barattoota galmeessuuf tokko uumi.",
+    "name": "Maqaa",
+    "category": "Sadarkaa hayyamaa",
+    "hours": "Sa'aatii",
+    "price": "Gatii (ETB)",
+    "validity": "Yeroo (guyyoota)",
+    "transmission": "Geejjibaa",
+    "transAny": "Kamiyyuu",
+    "transManual": "Harkaa",
+    "transAuto": "Otomaatikii",
+    "createTitle": "Paakejii koorsii haaraa",
+    "createSubtitle": "Paakejii kanaaf sa'aatii, gatii fi yeroo ibsi.",
+    "create": "Uumi",
+    "creating": "Uumaa jira…"
+  },
+  "enroll": {
+    "title": "Barataa galmeessi",
+    "subtitle": "{{name}} paakejii koorsiitti galmeessi.",
+    "package": "Paakejii koorsii",
+    "selectPackage": "Paakejii filadhu…",
+    "noPackages": "Paakejiin sochii qabu hin jiru. Duraan Paakejii jalatti tokko uumi.",
+    "packageRequired": "Maaloo paakejii filadhu.",
+    "confirm": "Galmeessi",
+    "enrolling": "Galmeessaa jira…",
+    "success": "Barataan galmaa'eera. Nagaheen jalqabaa ba'eera.",
+    "invoiceNumber": "Nagahee"
   },
   "reviewQueue": {
     "title": "Gamaaggama Galmee",

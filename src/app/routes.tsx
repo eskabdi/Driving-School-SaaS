@@ -6,6 +6,7 @@ import { LoginPage } from '@/features/auth/LoginPage';
 import { DashboardPage } from '@/features/dashboard/DashboardPage';
 import { LearnersPage } from '@/features/learners/LearnersPage';
 import { ReviewQueuePage } from '@/features/registrations/ReviewQueuePage';
+import { PackagesPage } from '@/features/packages/PackagesPage';
 import { InstructorsPage } from '@/features/instructors/InstructorsPage';
 import { VehiclesPage } from '@/features/vehicles/VehiclesPage';
 import { LessonsPage } from '@/features/lessons/LessonsPage';
@@ -27,6 +28,7 @@ const moduleRoutes = [
   { path: 'dashboard', element: <DashboardPage /> },
   { path: 'learners', element: <LearnersPage /> },
   { path: 'registrations', element: <ReviewQueuePage /> },
+  { path: 'packages', element: <PackagesPage /> },
   { path: 'instructors', element: <InstructorsPage /> },
   { path: 'vehicles', element: <VehiclesPage /> },
   { path: 'lessons', element: <LessonsPage /> },

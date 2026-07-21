@@ -1,15 +1,21 @@
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Loader2, Inbox } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { PageHeader } from '@/components/layout/PageHeader';
-import { useLearners } from './api';
+import { roleHasCapability } from '@/lib/roles';
+import { useLearners, type LearnerRow } from './api';
+import { EnrollDialog } from './EnrollDialog';
 
 export function LearnersPage() {
   const { t } = useTranslation();
   const { claims } = useAuth();
   const { data, isLoading, isError, error } = useLearners(claims?.tenant_id ?? null);
+  const [enrolling, setEnrolling] = useState<LearnerRow | null>(null);
+  const canEnroll = roleHasCapability(claims?.role, 'lessons.schedule');
 
   return (
     <div className="space-y-6">
@@ -38,6 +44,7 @@ export function LearnersPage() {
                   <th className="px-4 py-3 font-medium">{t('learners.col.phone')}</th>
                   <th className="px-4 py-3 font-medium">{t('learners.col.category')}</th>
                   <th className="px-4 py-3 font-medium">{t('learners.col.branch')}</th>
+                  {canEnroll && <th className="px-4 py-3" />}
                 </tr>
               </thead>
               <tbody>
@@ -53,6 +60,13 @@ export function LearnersPage() {
                       )}
                     </td>
                     <td className="px-4 py-3 text-muted-foreground">{l.branch?.name ?? '—'}</td>
+                    {canEnroll && (
+                      <td className="px-4 py-3 text-right">
+                        <Button size="sm" variant="outline" onClick={() => setEnrolling(l)}>
+                          {t('learners.enroll')}
+                        </Button>
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -60,6 +74,14 @@ export function LearnersPage() {
           )}
         </CardContent>
       </Card>
+
+      {enrolling && (
+        <EnrollDialog
+          learner={enrolling}
+          open={!!enrolling}
+          onOpenChange={(o) => !o && setEnrolling(null)}
+        />
+      )}
     </div>
   );
 }
