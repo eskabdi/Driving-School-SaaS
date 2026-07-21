@@ -3,6 +3,7 @@
   "nav": {
     "dashboard": "ዳሽቦርድ",
     "learners": "ተማሪዎች",
+    "registrations": "ምዝገባዎች",
     "instructors": "አስተማሪዎች",
     "vehicles": "ተሽከርካሪዎች",
     "lessons": "ትምህርቶች",
@@ -12,7 +13,8 @@
   },
   "action": {
     "signOut": "ውጣ",
-    "backHome": "ወደ መነሻ ተመለስ"
+    "backHome": "ወደ መነሻ ተመለስ",
+    "cancel": "ሰርዝ"
   },
   "auth": {
     "signInTitle": "ግባ",
@@ -38,7 +40,46 @@
   "module": {
     "comingSoon": "ይህ ክፍል የመድረኩ ዕቅድ አካል ሲሆን በቀጣይ ይገነባል።"
   },
-  "learners": { "subtitle": "የተማሪ መገለጫዎችን፣ ምዝገባዎችን እና እድገትን ያስተዳድሩ።" },
+  "learners": {
+    "subtitle": "የተማሪ መገለጫዎችን፣ ምዝገባዎችን እና እድገትን ያስተዳድሩ።",
+    "empty": "እስካሁን ተማሪ የለም። የመጀመሪያ ተማሪዎን ለመጨመር ምዝገባን ይለውጡ።",
+    "col": { "name": "ስም", "phone": "ስልክ", "category": "ደረጃ", "branch": "ቅርንጫፍ" }
+  },
+  "reviewQueue": {
+    "title": "የምዝገባ ግምገማ",
+    "subtitle": "የህዝብ ምዝገባዎችን ይገምግሙ፣ ያጽድቁ እና ይለውጡ።",
+    "empty": "በመጠባበቅ ላይ ያለ ምዝገባ የለም።",
+    "col": {
+      "code": "ኮድ",
+      "name": "ስም",
+      "phone": "ስልክ",
+      "status": "ሁኔታ",
+      "actions": "እርምጃዎች"
+    },
+    "action": {
+      "claim": "ግምገማ ጀምር",
+      "approve": "አጽድቅ",
+      "reject": "አትቀበል",
+      "convert": "ለውጥ"
+    }
+  },
+  "submissionStatus": {
+    "submitted": "ገብቷል",
+    "under_review": "በግምገማ ላይ",
+    "approved": "ጸድቋል",
+    "rejected": "ተቀባይነት አላገኘም",
+    "converted": "ተለውጧል",
+    "expired": "ጊዜው አልፏል"
+  },
+  "convert": {
+    "title": "ወደ ተማሪ ለውጥ",
+    "subtitle": "ለ{{name}} የተማሪ መዝገብ ይፍጠሩ።",
+    "branch": "ቅርንጫፍ",
+    "selectBranch": "ቅርንጫፍ ይምረጡ…",
+    "branchRequired": "እባክዎ ቅርንጫፍ ይምረጡ።",
+    "confirm": "ለውጥ",
+    "converting": "በመለወጥ ላይ…"
+  },
   "instructors": { "subtitle": "አስተማሪዎችን፣ ማረጋገጫዎችን እና ተገኝነትን ያስተዳድሩ።" },
   "vehicles": { "subtitle": "መኪኖችን፣ ጥገናን እና ሰነዶችን ያስተዳድሩ።" },
   "lessons": { "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።" },
@@ -50,8 +91,17 @@
     "subtitle": "ወደ {{school}} የመንጃ ትምህርት ቤት ያመልክቱ።",
     "fullName": "ሙሉ ስም",
     "phone": "ስልክ ቁጥር",
+    "email": "ኢሜይል (አማራጭ)",
     "dob": "የልደት ቀን",
-    "submit": "ማመልከቻ አስገባ"
+    "category": "የፍቃድ ደረጃ",
+    "consent": "የግል መረጃዬ ለዚህ ማመልከቻ እንዲሰራ እስማማለሁ።",
+    "consentRequired": "ለመቀጠል እባክዎ ይስማሙ።",
+    "submit": "ማመልከቻ አስገባ",
+    "submitting": "በማስገባት ላይ…",
+    "successTitle": "ማመልከቻ ደርሷል",
+    "successBody": "ማመልከቻዎን ለመከታተል የመከታተያ ኮድዎን ይያዙ።",
+    "alreadyReceived": "ከዚህ ስልክ ቁጥር ማመልከቻ አስቀድሞ ደርሶናል።",
+    "trackingCode": "የመከታተያ ኮድዎ"
   },
   "forbidden": {
     "title": "መዳረሻ ተከልክሏል",

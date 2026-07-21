@@ -3,6 +3,7 @@
   "nav": {
     "dashboard": "Daashboordii",
     "learners": "Barattoota",
+    "registrations": "Galmeewwan",
     "instructors": "Barsiisota",
     "vehicles": "Konkolaattota",
     "lessons": "Barnoota",
@@ -12,7 +13,8 @@
   },
   "action": {
     "signOut": "Ba'i",
-    "backHome": "Gara jalqabaatti deebi'i"
+    "backHome": "Gara jalqabaatti deebi'i",
+    "cancel": "Haqi"
   },
   "auth": {
     "signInTitle": "Seeni",
@@ -38,7 +40,46 @@
   "module": {
     "comingSoon": "Kutaan kun kutaa karoora waltajjii yoo ta'u itti aansuun ni ijaarama."
   },
-  "learners": { "subtitle": "Ibsa barattootaa, galmee fi guddina bulchi." },
+  "learners": {
+    "subtitle": "Ibsa barattootaa, galmee fi guddina bulchi.",
+    "empty": "Hanga ammaatti barataan hin jiru. Barataa jalqabaa dabaluuf galmee jijjiiri.",
+    "col": { "name": "Maqaa", "phone": "Bilbila", "category": "Sadarkaa", "branch": "Damee" }
+  },
+  "reviewQueue": {
+    "title": "Gamaaggama Galmee",
+    "subtitle": "Galmeewwan uummataa gamaaggami, mirkaneessi fi jijjiiri.",
+    "empty": "Galmeen eegaa jiru hin jiru.",
+    "col": {
+      "code": "Koodii",
+      "name": "Maqaa",
+      "phone": "Bilbila",
+      "status": "Haala",
+      "actions": "Gochawwan"
+    },
+    "action": {
+      "claim": "Gamaaggama jalqabi",
+      "approve": "Mirkaneessi",
+      "reject": "Didi",
+      "convert": "Jijjiiri"
+    }
+  },
+  "submissionStatus": {
+    "submitted": "Galfame",
+    "under_review": "Gamaaggama jala",
+    "approved": "Mirkanaa'e",
+    "rejected": "Didame",
+    "converted": "Jijjiirame",
+    "expired": "Yeroon darbe"
+  },
+  "convert": {
+    "title": "Gara barataatti jijjiiri",
+    "subtitle": "Galmee barataa {{name}} uumi.",
+    "branch": "Damee",
+    "selectBranch": "Damee filadhu…",
+    "branchRequired": "Maaloo damee filadhu.",
+    "confirm": "Jijjiiri",
+    "converting": "Jijjiiraa jira…"
+  },
   "instructors": { "subtitle": "Barsiisota, ragaa fi argamuu bulchi." },
   "vehicles": { "subtitle": "Konkolaattota, suphaa fi galmeewwan bulchi." },
   "lessons": { "subtitle": "Barnoota yaadaa fi hojii qopheessi." },
@@ -50,8 +91,17 @@
     "subtitle": "Gara mana barumsa konkolaataa {{school}} galmaa'i.",
     "fullName": "Maqaa guutuu",
     "phone": "Lakkoofsa bilbilaa",
+    "email": "Imeelii (filannoo)",
     "dob": "Guyyaa dhalootaa",
-    "submit": "Iyyannoo galchi"
+    "category": "Sadarkaa hayyamaa",
+    "consent": "Odeeffannoon dhuunfaa koo iyyannoo kanaaf akka gargaaramu nan hayyama.",
+    "consentRequired": "Itti fufuuf maaloo hayyami.",
+    "submit": "Iyyannoo galchi",
+    "submitting": "Galchaa jira…",
+    "successTitle": "Iyyannoon nu gahe",
+    "successBody": "Iyyannoo kee hordofuuf koodii hordoffii kee qabadhu.",
+    "alreadyReceived": "Lakkoofsa bilbilaa kana irraa iyyannoo duraan nu gaheera.",
+    "trackingCode": "Koodii hordoffii kee"
   },
   "forbidden": {
     "title": "Seensi dhorkameera",

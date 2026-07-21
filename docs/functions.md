@@ -5,9 +5,21 @@ hits PostgREST directly. Each function validates input with a shared Zod schema,
 uses the service-role key only for cross-tenant operations, and returns RFC 7807
 error envelopes (see [spec §7](./build-spec-v2.md)).
 
-> Status: **not yet implemented** in this scaffold. This index tracks the target
+> Status: the **Public Registration → Convert → Enroll** vertical is implemented
+> (`submit-public-registration`, `review-public-registration`, `enroll-learner`,
+> plus the shared `_shared/` wrapper). The rest of this index tracks the target
 > surface from blueprint §8 and spec §2 so functions land against a stable
 > contract.
+
+## Local dev
+
+```bash
+supabase functions serve            # serve all functions locally
+supabase functions deploy enroll-learner   # deploy one
+```
+
+Each function needs these secrets (set via `supabase secrets set`):
+`SUPABASE_URL`, `SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY`.
 
 ## Tenant & user lifecycle
 | Function | Purpose | Auth |

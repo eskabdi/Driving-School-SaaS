@@ -9,6 +9,7 @@ import {
   Wallet,
   BadgeCheck,
   Settings,
+  ClipboardList,
   LogOut,
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
@@ -25,6 +26,7 @@ interface NavItem {
 const NAV: NavItem[] = [
   { to: 'dashboard', labelKey: 'nav.dashboard', icon: LayoutDashboard },
   { to: 'learners', labelKey: 'nav.learners', icon: GraduationCap },
+  { to: 'registrations', labelKey: 'nav.registrations', icon: ClipboardList },
   { to: 'instructors', labelKey: 'nav.instructors', icon: Users },
   { to: 'vehicles', labelKey: 'nav.vehicles', icon: Car },
   { to: 'lessons', labelKey: 'nav.lessons', icon: CalendarClock },

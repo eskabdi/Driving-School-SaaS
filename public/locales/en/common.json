@@ -3,6 +3,7 @@
   "nav": {
     "dashboard": "Dashboard",
     "learners": "Learners",
+    "registrations": "Registrations",
     "instructors": "Instructors",
     "vehicles": "Vehicles",
     "lessons": "Lessons",
@@ -12,7 +13,8 @@
   },
   "action": {
     "signOut": "Sign out",
-    "backHome": "Back to home"
+    "backHome": "Back to home",
+    "cancel": "Cancel"
   },
   "auth": {
     "signInTitle": "Sign in",
@@ -38,7 +40,46 @@
   "module": {
     "comingSoon": "This module is part of the platform blueprint and will be built out next."
   },
-  "learners": { "subtitle": "Manage learner profiles, enrollments, and progress." },
+  "learners": {
+    "subtitle": "Manage learner profiles, enrollments, and progress.",
+    "empty": "No learners yet. Convert a registration to add your first learner.",
+    "col": { "name": "Name", "phone": "Phone", "category": "Category", "branch": "Branch" }
+  },
+  "reviewQueue": {
+    "title": "Registration Review",
+    "subtitle": "Review, approve, and convert public registrations.",
+    "empty": "No pending registrations.",
+    "col": {
+      "code": "Code",
+      "name": "Name",
+      "phone": "Phone",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "action": {
+      "claim": "Start review",
+      "approve": "Approve",
+      "reject": "Reject",
+      "convert": "Convert"
+    }
+  },
+  "submissionStatus": {
+    "submitted": "Submitted",
+    "under_review": "Under review",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "converted": "Converted",
+    "expired": "Expired"
+  },
+  "convert": {
+    "title": "Convert to learner",
+    "subtitle": "Create a learner record for {{name}}.",
+    "branch": "Branch",
+    "selectBranch": "Select a branch…",
+    "branchRequired": "Please select a branch.",
+    "confirm": "Convert",
+    "converting": "Converting…"
+  },
   "instructors": { "subtitle": "Manage instructors, certifications, and availability." },
   "vehicles": { "subtitle": "Manage the fleet, maintenance, and documents." },
   "lessons": { "subtitle": "Schedule and deliver theory and practical lessons." },
@@ -50,8 +91,17 @@
     "subtitle": "Apply to {{school}} driving school.",
     "fullName": "Full name",
     "phone": "Phone number",
+    "email": "Email (optional)",
     "dob": "Date of birth",
-    "submit": "Submit application"
+    "category": "License category",
+    "consent": "I agree to the processing of my personal data for this application.",
+    "consentRequired": "Please agree to continue.",
+    "submit": "Submit application",
+    "submitting": "Submitting…",
+    "successTitle": "Application received",
+    "successBody": "Keep your tracking code to follow up on your application.",
+    "alreadyReceived": "We've already received an application from this phone number.",
+    "trackingCode": "Your tracking code"
   },
   "forbidden": {
     "title": "Access denied",
