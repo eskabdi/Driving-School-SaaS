@@ -14,13 +14,22 @@ create table public.plans (
   updated_at timestamptz not null default now()
 );
 
--- Global license categories (Ethiopian codes; blueprint §7)
+-- Global license categories — modelled on Ethiopia's Drivers' Qualification
+-- Certification License Proclamation No. 1074/2018 (Federal Negarit Gazette
+-- No. 27, Schedule). Seven top-level categories; Public Transport, Truck, and
+-- Fuel Tanker each have sub-levels. `code` is the unique licensable unit
+-- (e.g. '4-2' = Public II); `category_no` + `level` mirror the schedule.
 create table public.license_categories (
   id uuid primary key default gen_random_uuid(),
   code text unique not null,
+  category_no int not null,           -- 1..7 per the proclamation schedule
+  level text,                          -- e.g. 'I','II','III' for multi-level categories; null otherwise
   name_en text not null,
   name_am text,
   name_om text,
+  vehicle_description text,            -- "Types of Vehicle Operated" column
+  min_age int,                         -- Age & Education Requirements (Art. 12)
+  min_grade int,                       -- minimum completed school grade
   sort_order int not null default 0,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -46,7 +55,8 @@ create table public.tenant_settings (
   timezone text not null default 'Africa/Addis_Ababa',
   currency text not null default 'ETB',
   working_hours jsonb not null default '{}'::jsonb,
-  enabled_license_categories text[] not null default array['4']::text[],
+  -- Default to Automobile (category 3, Proclamation No. 1074/2018).
+  enabled_license_categories text[] not null default array['3']::text[],
   brand jsonb not null default '{}'::jsonb,
   -- Scheduling (spec §4)
   instructors_self_schedule boolean not null default false,

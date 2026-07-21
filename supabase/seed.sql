@@ -12,16 +12,46 @@ on conflict (code) do update
       monthly_price_etb = excluded.monthly_price_etb,
       limits = excluded.limits;
 
--- Ethiopian license categories (codes 1–6) ----------------------------------
-insert into public.license_categories (code, name_en, name_am, name_om, sort_order) values
-  ('1', 'Category 1 — Motorcycle',        'ደረጃ 1 — ሞተር ሳይክል',      'Sadarkaa 1 — Motora',            1),
-  ('2', 'Category 2 — Automobile',        'ደረጃ 2 — አውቶሞቢል',        'Sadarkaa 2 — Otomobiilii',       2),
-  ('3', 'Category 3 — Public I (Taxi)',   'ደረጃ 3 — የህዝብ 1 (ታክሲ)',  'Sadarkaa 3 — Uummataa 1 (Taaksii)', 3),
-  ('4', 'Category 4 — Public II (Bus)',   'ደረጃ 4 — የህዝብ 2 (አውቶቡስ)', 'Sadarkaa 4 — Uummataa 2 (Awtoobisii)', 4),
-  ('5', 'Category 5 — Truck / Dry Cargo', 'ደረጃ 5 — ጭነት (ደረቅ)',     'Sadarkaa 5 — Feʼumsa (Gogaa)',   5),
-  ('6', 'Category 6 — Fuel Tanker',       'ደረጃ 6 — የነዳጅ ታንከር',     'Sadarkaa 6 — Taankara Boba''aa', 6)
+-- Ethiopian license categories — Proclamation No. 1074/2018 Schedule ---------
+-- Seven categories; Public Transport (4), Truck (5) and Fuel Tanker (6) have
+-- sub-levels. min_age / min_grade come from Article 12 (Age & Education).
+insert into public.license_categories
+  (code, category_no, level, name_en, name_am, name_om, vehicle_description, min_age, min_grade, sort_order) values
+  ('1',   1, null, 'Motorcycle',                    'ሞተር ሳይክል',               'Motora',
+    'Motorcycle with two wheels', 18, 4, 10),
+  ('2',   2, null, 'Three-Wheel Motorcycle',        'ባለሶስት ጎማ ሞተር ሳይክል',      'Motora kofata sadii',
+    'Any motor vehicle with three wheels', 20, 10, 20),
+  ('3',   3, null, 'Automobile',                    'አውቶሞቢል',                 'Otomobiilii',
+    'Any motor vehicle with capacity of up to 8 seats and loading capacity of up to 10,000 kg', 18, 4, 30),
+
+  ('4-1', 4, 'I',   'Public Transport — Level I',   'የሕዝብ ማመላለሻ — ደረጃ 1',      'Geejjiba Uummataa — Sadarkaa I',
+    'Any public transport with a capacity of up to 20 seats, plus Automobile category', 22, 10, 41),
+  ('4-2', 4, 'II',  'Public Transport — Level II',  'የሕዝብ ማመላለሻ — ደረጃ 2',      'Geejjiba Uummataa — Sadarkaa II',
+    'Any public transport with a capacity of up to 45 seats, plus Automobile category', 24, 10, 42),
+  ('4-3', 4, 'III', 'Public Transport — Level III', 'የሕዝብ ማመላለሻ — ደረጃ 3',      'Geejjiba Uummataa — Sadarkaa III',
+    'Any public transport, plus Automobile category', 26, 10, 43),
+
+  ('5-1', 5, 'I',   'Truck — Level I',              'የጭነት መኪና — ደረጃ 1',        'Konkolaataa Feʼumsaa — Sadarkaa I',
+    'A truck with a loading capacity of up to 3,500 kg, plus Automobile category', 22, 10, 51),
+  ('5-2', 5, 'II',  'Truck — Level II',             'የጭነት መኪና — ደረጃ 2',        'Konkolaataa Feʼumsaa — Sadarkaa II',
+    'Any truck without a trailer, or with a crane of lifting capacity up to 18 ton, plus Automobile category', 24, 10, 52),
+  ('5-3', 5, 'III', 'Truck — Level III',            'የጭነት መኪና — ደረጃ 3',        'Konkolaataa Feʼumsaa — Sadarkaa III',
+    'Any truck with or without a trailer and with or without a crane, plus Automobile category', 26, 10, 53),
+
+  ('6-1', 6, 'I',   'Fuel Tanker — Level I',        'የነዳጅ ታንከር — ደረጃ 1',        'Taankara Boba''aa — Sadarkaa I',
+    'Fuel or liquid tanker without a trailer with a loading capacity of up to 18,000 liters, plus Automobile category', 24, 10, 61),
+  ('6-2', 6, 'II',  'Fuel Tanker — Level II',       'የነዳጅ ታንከር — ደረጃ 2',        'Taankara Boba''aa — Sadarkaa II',
+    'Any fuel or liquid tanker with or without a trailer, plus Automobile category', 26, 10, 62),
+
+  ('7',   7, null, 'Machinery Operator',            'የማሽነሪ ኦፕሬተር',            'Oppireetara Maashinarii',
+    'Only the type and capacity of machinery permitted in the license category', 20, 10, 70)
 on conflict (code) do update
-  set name_en = excluded.name_en,
+  set category_no = excluded.category_no,
+      level = excluded.level,
+      name_en = excluded.name_en,
       name_am = excluded.name_am,
       name_om = excluded.name_om,
+      vehicle_description = excluded.vehicle_description,
+      min_age = excluded.min_age,
+      min_grade = excluded.min_grade,
       sort_order = excluded.sort_order;

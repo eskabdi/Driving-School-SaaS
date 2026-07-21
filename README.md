@@ -52,7 +52,9 @@ SQL lives in [`supabase/`](./supabase):
 
 - `migrations/` — extensions & enums, JWT helpers, core tables, RLS policies,
   and the custom access-token hook.
-- `seed.sql` — idempotent plans + Ethiopian license categories.
+- `seed.sql` — idempotent plans + the Ethiopian license categories from
+  Drivers' Qualification Certification License Proclamation No. 1074/2018
+  (7 categories; Public Transport, Truck and Fuel Tanker have sub-levels).
 - `config.toml` — local dev config.
 
 Apply to a linked project with the Supabase CLI:
