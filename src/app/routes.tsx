@@ -1,6 +1,8 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import { RequireAuth } from '@/components/auth/RequireAuth';
+import { RequireRole } from '@/components/auth/RequireRole';
 import { AppShell } from '@/components/layout/AppShell';
+import { PlatformConsole } from '@/features/platform/PlatformConsole';
 import { RouteError } from '@/features/misc/RouteError';
 import { LoginPage } from '@/features/auth/LoginPage';
 import { DashboardPage } from '@/features/dashboard/DashboardPage';
@@ -16,6 +18,7 @@ import { SettingsPage } from '@/features/settings/SettingsPage';
 import { PublicRegistrationPage } from '@/features/public-registration/PublicRegistrationPage';
 import { ForbiddenPage } from '@/features/misc/ForbiddenPage';
 import { NotFoundPage } from '@/features/misc/NotFoundPage';
+import { RootRedirect } from '@/features/misc/RootRedirect';
 
 /**
  * Application routes (blueprint §6). All app routes are tenant-scoped; the
@@ -38,10 +41,23 @@ const moduleRoutes = [
 ];
 
 export const router = createBrowserRouter([
-  { path: '/', element: <Navigate to="/app" replace /> },
+  { path: '/', element: <RootRedirect /> },
   { path: '/login', element: <LoginPage />, errorElement: <RouteError /> },
   { path: '/r/:slug', element: <PublicRegistrationPage />, errorElement: <RouteError /> },
   { path: '/forbidden', element: <ForbiddenPage /> },
+
+  {
+    // Super Admin platform console — separate tree, never mixed with tenant UI.
+    path: '/platform',
+    element: (
+      <RequireAuth>
+        <RequireRole roles={['super_admin']}>
+          <PlatformConsole />
+        </RequireRole>
+      </RequireAuth>
+    ),
+    errorElement: <RouteError />,
+  },
 
   {
     path: '/app',

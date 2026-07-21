@@ -135,6 +135,35 @@
     "alreadyReceived": "ከዚህ ስልክ ቁጥር ማመልከቻ አስቀድሞ ደርሶናል።",
     "trackingCode": "የመከታተያ ኮድዎ"
   },
+  "platform": {
+    "title": "የመድረክ ኮንሶል",
+    "tenants": "የመንጃ ትምህርት ቤቶች",
+    "tenantsSubtitle": "በመድረኩ ላይ ትምህርት ቤቶችን ያስገቡ እና ያስተዳድሩ።",
+    "onboardTenant": "ትምህርት ቤት አስገባ",
+    "noTenants": "እስካሁን ትምህርት ቤት የለም። የመጀመሪያ ትምህርት ቤትዎን ያስገቡ።",
+    "col": { "name": "ትምህርት ቤት", "slug": "Slug", "status": "ሁኔታ" },
+    "onboard": {
+      "title": "የመንጃ ትምህርት ቤት አስገባ",
+      "subtitle": "ተከራይ ይፍጠሩ እና የመጀመሪያ አስተዳዳሪውን ይጋብዙ።",
+      "schoolName": "የትምህርት ቤት ስም",
+      "slug": "የURL slug",
+      "locale": "ነባሪ ቋንቋ",
+      "plan": "እቅድ",
+      "adminName": "የአስተዳዳሪ ሙሉ ስም",
+      "adminEmail": "የአስተዳዳሪ ኢሜይል",
+      "create": "ትምህርት ቤት ፍጠር",
+      "creating": "በመፍጠር ላይ…",
+      "success": "ትምህርት ቤት ተፈጥሯል። ለ{{slug}} ግብዣ ተልኳል።"
+    }
+  },
+  "tenantStatus": {
+    "trial": "ሙከራ",
+    "active": "ንቁ",
+    "past_due": "ጊዜው ያለፈ ክፍያ",
+    "suspended": "ታግዷል",
+    "offboarding": "በማስወጣት ላይ",
+    "archived": "ተመዝግቧል"
+  },
   "forbidden": {
     "title": "መዳረሻ ተከልክሏል",
     "subtitle": "ይህን ገጽ ለማየት ፈቃድ የለዎትም።"

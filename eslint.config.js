@@ -24,4 +24,9 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     },
   },
+  {
+    // Node scripts (bootstrap, tooling) run under Node, not the browser.
+    files: ['scripts/**/*.ts'],
+    languageOptions: { globals: globals.node },
+  },
 );

@@ -70,6 +70,23 @@ supabase gen types typescript --linked > src/lib/database.types.ts
 Enable the access-token hook (Authentication → Hooks → Access token) pointing at
 `public.custom_access_token_hook` so JWTs carry `tenant_id` / `role` / etc.
 
+### Bootstrap & onboarding
+
+```bash
+# 1. Deploy the Edge Functions and set their secrets.
+supabase functions deploy create-tenant submit-public-registration \
+  review-public-registration enroll-learner
+supabase secrets set SUPABASE_URL=… SUPABASE_ANON_KEY=… SUPABASE_SERVICE_ROLE_KEY=…
+
+# 2. Create the first platform super admin (refuses if one already exists).
+SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… \
+  pnpm bootstrap:super-admin you@example.com
+```
+
+The super admin signs in and is routed to `/platform`, where the Onboarding
+Wizard calls `create-tenant` to create a school + invite its first
+`school_admin`. That admin then works inside `/app`.
+
 ## Project structure
 
 ```

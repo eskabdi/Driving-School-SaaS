@@ -27,7 +27,7 @@ export function LoginPage() {
       setError(normalizeError(err).detail ?? t('errors.INTERNAL'));
       return;
     }
-    navigate('/app', { replace: true });
+    navigate('/', { replace: true });
   }
 
   return (

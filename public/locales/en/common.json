@@ -135,6 +135,35 @@
     "alreadyReceived": "We've already received an application from this phone number.",
     "trackingCode": "Your tracking code"
   },
+  "platform": {
+    "title": "Platform Console",
+    "tenants": "Driving schools",
+    "tenantsSubtitle": "Onboard and manage schools on the platform.",
+    "onboardTenant": "Onboard school",
+    "noTenants": "No schools yet. Onboard your first driving school.",
+    "col": { "name": "School", "slug": "Slug", "status": "Status" },
+    "onboard": {
+      "title": "Onboard a driving school",
+      "subtitle": "Create the tenant and invite its first administrator.",
+      "schoolName": "School name",
+      "slug": "URL slug",
+      "locale": "Default language",
+      "plan": "Plan",
+      "adminName": "Admin full name",
+      "adminEmail": "Admin email",
+      "create": "Create school",
+      "creating": "Creating…",
+      "success": "School created. An invitation was sent for {{slug}}."
+    }
+  },
+  "tenantStatus": {
+    "trial": "Trial",
+    "active": "Active",
+    "past_due": "Past due",
+    "suspended": "Suspended",
+    "offboarding": "Offboarding",
+    "archived": "Archived"
+  },
   "forbidden": {
     "title": "Access denied",
     "subtitle": "You don't have permission to view this page."

@@ -135,6 +135,35 @@
     "alreadyReceived": "Lakkoofsa bilbilaa kana irraa iyyannoo duraan nu gaheera.",
     "trackingCode": "Koodii hordoffii kee"
   },
+  "platform": {
+    "title": "Konsoolii Waltajjii",
+    "tenants": "Mana barumsa konkolaataa",
+    "tenantsSubtitle": "Waltajjii irratti mana barumsaa galchii fi bulchi.",
+    "onboardTenant": "Mana barumsaa galchi",
+    "noTenants": "Hanga ammaatti manni barumsaa hin jiru. Mana barumsaa jalqabaa galchi.",
+    "col": { "name": "Mana barumsaa", "slug": "Slug", "status": "Haala" },
+    "onboard": {
+      "title": "Mana barumsa konkolaataa galchi",
+      "subtitle": "Kiraa uumii bulchaa isaa jalqabaa afeeri.",
+      "schoolName": "Maqaa mana barumsaa",
+      "slug": "URL slug",
+      "locale": "Afaan durtii",
+      "plan": "Karoora",
+      "adminName": "Maqaa guutuu bulchaa",
+      "adminEmail": "Imeelii bulchaa",
+      "create": "Mana barumsaa uumi",
+      "creating": "Uumaa jira…",
+      "success": "Manni barumsaa uumame. Afeerraan {{slug}}f ergame."
+    }
+  },
+  "tenantStatus": {
+    "trial": "Yaalii",
+    "active": "Sochii qabu",
+    "past_due": "Yeroon darbe",
+    "suspended": "Uggurame",
+    "offboarding": "Baasaa jira",
+    "archived": "Kuufame"
+  },
   "forbidden": {
     "title": "Seensi dhorkameera",
     "subtitle": "Fuula kana ilaaluuf hayyama hin qabdu."
