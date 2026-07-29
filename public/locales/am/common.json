@@ -128,7 +128,31 @@
     "create": "ፍጠር",
     "creating": "በመፍጠር ላይ…"
   },
-  "vehicles": { "subtitle": "መኪኖችን፣ ጥገናን እና ሰነዶችን ያስተዳድሩ።" },
+  "vehicles": {
+    "subtitle": "መኪኖችን፣ ጥገናን እና ሰነዶችን ያስተዳድሩ።",
+    "new": "አዲስ ተሽከርካሪ",
+    "empty": "እስካሁን ተሽከርካሪ የለም። የመጀመሪያ ተሽከርካሪዎን ይጨምሩ።",
+    "plate": "የሰሌዳ ቁጥር",
+    "vehicle": "ተሽከርካሪ",
+    "make": "አምራች",
+    "model": "ሞዴል",
+    "transmission": "ማስተላለፊያ",
+    "manual": "ማንዋል",
+    "automatic": "አውቶማቲክ",
+    "insuranceExpiry": "የመድን ማብቂያ",
+    "fitnessExpiry": "የብቁነት ማብቂያ",
+    "status": "ሁኔታ",
+    "statusValue": {
+      "active": "ንቁ",
+      "in_maintenance": "በጥገና ላይ",
+      "out_of_service": "ከአገልግሎት ውጭ",
+      "retired": "ጡረታ የወጣ"
+    },
+    "createTitle": "አዲስ ተሽከርካሪ",
+    "createSubtitle": "ወደ መኪና ቡድንዎ ተሽከርካሪ ይጨምሩ።",
+    "create": "ፍጠር",
+    "creating": "በመፍጠር ላይ…"
+  },
   "lessons": { "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።" },
   "finance": { "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።" },
   "certificates": { "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።" },

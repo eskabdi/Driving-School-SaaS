@@ -128,7 +128,31 @@
     "create": "Create",
     "creating": "Creating…"
   },
-  "vehicles": { "subtitle": "Manage the fleet, maintenance, and documents." },
+  "vehicles": {
+    "subtitle": "Manage the fleet, maintenance, and documents.",
+    "new": "New vehicle",
+    "empty": "No vehicles yet. Add your first vehicle.",
+    "plate": "Plate number",
+    "vehicle": "Vehicle",
+    "make": "Make",
+    "model": "Model",
+    "transmission": "Transmission",
+    "manual": "Manual",
+    "automatic": "Automatic",
+    "insuranceExpiry": "Insurance expiry",
+    "fitnessExpiry": "Fitness expiry",
+    "status": "Status",
+    "statusValue": {
+      "active": "Active",
+      "in_maintenance": "In maintenance",
+      "out_of_service": "Out of service",
+      "retired": "Retired"
+    },
+    "createTitle": "New vehicle",
+    "createSubtitle": "Add a vehicle to your fleet.",
+    "create": "Create",
+    "creating": "Creating…"
+  },
   "lessons": { "subtitle": "Schedule and deliver theory and practical lessons." },
   "finance": { "subtitle": "Invoices, payments, and refunds." },
   "certificates": { "subtitle": "Issue and verify certificates and ID cards." },

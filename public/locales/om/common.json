@@ -128,7 +128,31 @@
     "create": "Uumi",
     "creating": "Uumaa jira…"
   },
-  "vehicles": { "subtitle": "Konkolaattota, suphaa fi galmeewwan bulchi." },
+  "vehicles": {
+    "subtitle": "Konkolaattota, suphaa fi galmeewwan bulchi.",
+    "new": "Konkolaataa haaraa",
+    "empty": "Hanga ammaatti konkolaataan hin jiru. Konkolaataa jalqabaa dabali.",
+    "plate": "Lakkoofsa gabatee",
+    "vehicle": "Konkolaataa",
+    "make": "Oomishaa",
+    "model": "Moodeela",
+    "transmission": "Geejjibaa",
+    "manual": "Harkaa",
+    "automatic": "Otomaatikii",
+    "insuranceExpiry": "Yeroo inshuraansii dhumu",
+    "fitnessExpiry": "Yeroo fitneesii dhumu",
+    "status": "Haala",
+    "statusValue": {
+      "active": "Sochii qabu",
+      "in_maintenance": "Suphaa jala",
+      "out_of_service": "Tajaajila ala",
+      "retired": "Soorama baʼe"
+    },
+    "createTitle": "Konkolaataa haaraa",
+    "createSubtitle": "Garee konkolaataa keetti konkolaataa dabali.",
+    "create": "Uumi",
+    "creating": "Uumaa jira…"
+  },
   "lessons": { "subtitle": "Barnoota yaadaa fi hojii qopheessi." },
   "finance": { "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa." },
   "certificates": { "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi." },
