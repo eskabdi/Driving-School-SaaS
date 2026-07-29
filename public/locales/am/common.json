@@ -112,7 +112,22 @@
     "confirm": "ለውጥ",
     "converting": "በመለወጥ ላይ…"
   },
-  "instructors": { "subtitle": "አስተማሪዎችን፣ ማረጋገጫዎችን እና ተገኝነትን ያስተዳድሩ።" },
+  "instructors": {
+    "subtitle": "አስተማሪዎችን፣ ማረጋገጫዎችን እና ተገኝነትን ያስተዳድሩ።",
+    "new": "አዲስ አስተማሪ",
+    "empty": "እስካሁን አስተማሪ የለም። የመጀመሪያ አስተማሪዎን ይጨምሩ።",
+    "name": "ስም",
+    "phone": "ስልክ",
+    "email": "ኢሜይል",
+    "licenseNumber": "የፍቃድ ቁጥር",
+    "licenseExpiry": "የፍቃድ ማብቂያ",
+    "status": "ሁኔታ",
+    "statusValue": { "active": "ንቁ", "inactive": "ንቁ ያልሆነ" },
+    "createTitle": "አዲስ አስተማሪ",
+    "createSubtitle": "ወደ ትምህርት ቤትዎ አስተማሪ ይጨምሩ።",
+    "create": "ፍጠር",
+    "creating": "በመፍጠር ላይ…"
+  },
   "vehicles": { "subtitle": "መኪኖችን፣ ጥገናን እና ሰነዶችን ያስተዳድሩ።" },
   "lessons": { "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።" },
   "finance": { "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።" },

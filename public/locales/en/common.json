@@ -112,7 +112,22 @@
     "confirm": "Convert",
     "converting": "Converting…"
   },
-  "instructors": { "subtitle": "Manage instructors, certifications, and availability." },
+  "instructors": {
+    "subtitle": "Manage instructors, certifications, and availability.",
+    "new": "New instructor",
+    "empty": "No instructors yet. Add your first instructor.",
+    "name": "Name",
+    "phone": "Phone",
+    "email": "Email",
+    "licenseNumber": "License number",
+    "licenseExpiry": "License expiry",
+    "status": "Status",
+    "statusValue": { "active": "Active", "inactive": "Inactive" },
+    "createTitle": "New instructor",
+    "createSubtitle": "Add an instructor to your school.",
+    "create": "Create",
+    "creating": "Creating…"
+  },
   "vehicles": { "subtitle": "Manage the fleet, maintenance, and documents." },
   "lessons": { "subtitle": "Schedule and deliver theory and practical lessons." },
   "finance": { "subtitle": "Invoices, payments, and refunds." },

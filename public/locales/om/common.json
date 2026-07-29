@@ -112,7 +112,22 @@
     "confirm": "Jijjiiri",
     "converting": "Jijjiiraa jira…"
   },
-  "instructors": { "subtitle": "Barsiisota, ragaa fi argamuu bulchi." },
+  "instructors": {
+    "subtitle": "Barsiisota, ragaa fi argamuu bulchi.",
+    "new": "Barsiisaa haaraa",
+    "empty": "Hanga ammaatti barsiisaan hin jiru. Barsiisaa jalqabaa dabali.",
+    "name": "Maqaa",
+    "phone": "Bilbila",
+    "email": "Imeelii",
+    "licenseNumber": "Lakkoofsa hayyamaa",
+    "licenseExpiry": "Yeroo hayyamni dhumu",
+    "status": "Haala",
+    "statusValue": { "active": "Sochii qabu", "inactive": "Kan hin sochoone" },
+    "createTitle": "Barsiisaa haaraa",
+    "createSubtitle": "Mana barumsaa keetti barsiisaa dabali.",
+    "create": "Uumi",
+    "creating": "Uumaa jira…"
+  },
   "vehicles": { "subtitle": "Konkolaattota, suphaa fi galmeewwan bulchi." },
   "lessons": { "subtitle": "Barnoota yaadaa fi hojii qopheessi." },
   "finance": { "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa." },
