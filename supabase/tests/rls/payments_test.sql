@@ -28,14 +28,14 @@ insert into public.payments (id, tenant_id, invoice_id, amount, method, status) 
 -- Staff sees the payment.
 set local role authenticated;
 select set_config('request.jwt.claims',
-  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"aaaaaaaa-2222-2222-2222-222222222222","role":"school_admin","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"aaaaaaaa-2222-2222-2222-222222222222","user_role":"school_admin","tenant_status":"active","user_status":"active"}',
   true);
 select is((select count(*) from public.payments)::bigint, 1::bigint,
   'school_admin sees the payment on their tenant''s invoice');
 
 -- The learner who owns the invoice sees their own payment.
 select set_config('request.jwt.claims',
-  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"bbbbbbbb-2222-2222-2222-222222222222","role":"learner","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"bbbbbbbb-2222-2222-2222-222222222222","user_role":"learner","tenant_status":"active","user_status":"active"}',
   true);
 select is((select count(*) from public.payments)::bigint, 1::bigint,
   'the invoice''s own learner sees their payment');
@@ -47,14 +47,14 @@ insert into public.learners (id, tenant_id, user_id, full_name) values
   ('a0000000-2222-2222-2222-222222222222', '11111111-2222-2222-2222-222222222222',
    'ffffffff-2222-2222-2222-222222222222', 'Learner Other');
 select set_config('request.jwt.claims',
-  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"ffffffff-2222-2222-2222-222222222222","role":"learner","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"11111111-2222-2222-2222-222222222222","user_id":"ffffffff-2222-2222-2222-222222222222","user_role":"learner","tenant_status":"active","user_status":"active"}',
   true);
 select is((select count(*) from public.payments)::bigint, 0::bigint,
   'a learner who does not own the invoice sees no payments');
 
 -- Cross-tenant staff sees nothing.
 select set_config('request.jwt.claims',
-  '{"tenant_id":"22222222-2222-2222-2222-222222222222","user_id":"aaaaaaaa-2222-2222-2222-222222222222","role":"school_admin","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"22222222-2222-2222-2222-222222222222","user_id":"aaaaaaaa-2222-2222-2222-222222222222","user_role":"school_admin","tenant_status":"active","user_status":"active"}',
   true);
 select is((select count(*) from public.payments)::bigint, 0::bigint,
   'the other tenant''s school_admin sees no payments');

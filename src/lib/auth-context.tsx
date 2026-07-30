@@ -50,12 +50,15 @@ function decodeClaims(session: Session | null): AuthClaims | null {
           .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
           .join(''),
       ),
-    ) as Partial<AuthClaims> & { sub: string };
+    ) as Partial<Omit<AuthClaims, 'role'>> & { sub: string; user_role?: Role };
     return {
       sub: payload ? json.sub : session.user.id,
       tenant_id: json.tenant_id ?? null,
       user_id: json.user_id ?? null,
-      role: (json.role as Role) ?? null,
+      // The JWT's own top-level "role" is PostgREST's DB-role-switch claim
+      // (always "authenticated") — the app role rides under "user_role" to
+      // avoid colliding with it (see migration 20260719002300).
+      role: json.user_role ?? null,
       branch_id: json.branch_id ?? null,
       user_status: json.user_status ?? null,
       tenant_status: json.tenant_status ?? null,

@@ -101,7 +101,10 @@ export function serve<TSchema extends z.ZodTypeAny>(
           auth.authUid = (claims.sub as string) ?? null;
           auth.userId = (claims.user_id as string) ?? null;
           auth.tenantId = (claims.tenant_id as string) ?? null;
-          auth.role = (claims.role as string) ?? null;
+          // Top-level "role" is PostgREST's DB-role-switch claim (always
+          // "authenticated"); the app role rides under "user_role" instead
+          // (see migration 20260719002300).
+          auth.role = (claims.user_role as string) ?? null;
           auth.branchId = (claims.branch_id as string) ?? null;
           auth.tenantStatus = (claims.tenant_status as string) ?? null;
         } catch {

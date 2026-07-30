@@ -33,7 +33,7 @@ insert into public.learners (id, tenant_id, full_name) values
 set local role authenticated;
 select set_config(
   'request.jwt.claims',
-  '{"tenant_id":"11111111-1111-1111-1111-111111111111","user_id":"aaaaaaaa-0000-0000-0000-000000000001","role":"school_admin","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"11111111-1111-1111-1111-111111111111","user_id":"aaaaaaaa-0000-0000-0000-000000000001","user_role":"school_admin","tenant_status":"active","user_status":"active"}',
   true
 );
 
@@ -53,7 +53,7 @@ select is(
 -- ---------------------------------------------------------------------------
 select set_config(
   'request.jwt.claims',
-  '{"tenant_id":"11111111-1111-1111-1111-111111111111","user_id":"aaaaaaaa-0000-0000-0000-000000000001","role":"school_admin","tenant_status":"suspended","user_status":"active"}',
+  '{"tenant_id":"11111111-1111-1111-1111-111111111111","user_id":"aaaaaaaa-0000-0000-0000-000000000001","user_role":"school_admin","tenant_status":"suspended","user_status":"active"}',
   true
 );
 select throws_ok(
@@ -69,7 +69,7 @@ select throws_ok(
 -- ---------------------------------------------------------------------------
 select set_config(
   'request.jwt.claims',
-  '{"tenant_id":"22222222-2222-2222-2222-222222222222","user_id":"bbbbbbbb-0000-0000-0000-000000000001","role":"school_admin","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"22222222-2222-2222-2222-222222222222","user_id":"bbbbbbbb-0000-0000-0000-000000000001","user_role":"school_admin","tenant_status":"active","user_status":"active"}',
   true
 );
 select is(

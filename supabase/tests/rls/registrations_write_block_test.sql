@@ -36,7 +36,7 @@ select lives_ok(
 -- Receptionist can normally update a submission...
 set local role authenticated;
 select set_config('request.jwt.claims',
-  '{"tenant_id":"11111111-4444-4444-4444-444444444444","user_id":"aaaaaaaa-4444-4444-4444-444444444444","role":"receptionist","tenant_status":"active","user_status":"active"}',
+  '{"tenant_id":"11111111-4444-4444-4444-444444444444","user_id":"aaaaaaaa-4444-4444-4444-444444444444","user_role":"receptionist","tenant_status":"active","user_status":"active"}',
   true);
 select lives_ok(
   $$update public.public_registration_submissions set status='under_review'
@@ -46,7 +46,7 @@ select lives_ok(
 
 -- ...but not once the tenant is suspended (spec §2.1 write-block).
 select set_config('request.jwt.claims',
-  '{"tenant_id":"11111111-4444-4444-4444-444444444444","user_id":"aaaaaaaa-4444-4444-4444-444444444444","role":"receptionist","tenant_status":"suspended","user_status":"active"}',
+  '{"tenant_id":"11111111-4444-4444-4444-444444444444","user_id":"aaaaaaaa-4444-4444-4444-444444444444","user_role":"receptionist","tenant_status":"suspended","user_status":"active"}',
   true);
 select throws_ok(
   $$update public.public_registration_submissions set status='approved'
