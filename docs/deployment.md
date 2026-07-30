@@ -54,16 +54,26 @@ to false, and the app will look "empty but logged in". This step is not optional
 
 ## 3. Deploy Edge Functions
 
+The two public endpoints must skip gateway JWT verification; the other ten
+authenticate inside `_shared/handler.ts`:
+
 ```bash
-supabase functions deploy --project-ref <ref>     # all 12
-supabase secrets set --project-ref <ref> \
-  SUPABASE_URL=https://<ref>.supabase.co \
-  SUPABASE_ANON_KEY=<anon> \
-  SUPABASE_SERVICE_ROLE_KEY=<service_role>
+supabase functions deploy submit-public-registration --project-ref <ref> --no-verify-jwt
+supabase functions deploy verify-certificate         --project-ref <ref> --no-verify-jwt
+supabase functions deploy --project-ref <ref>        # the remaining ten
 ```
 
-`verify-certificate` and `submit-public-registration` are public (unauthenticated
-callers); the rest require a JWT and check capabilities in `_shared/handler.ts`.
+`SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected
+into Edge Functions automatically — no `secrets set` needed for those. Use
+`supabase secrets set` only for third-party keys (Chapa, Telebirr, Afromessage,
+Resend, Turnstile) when those integrations are switched on.
+
+> **Run this from an unrestricted network.** The deploy endpoint
+> (`POST /v1/projects/{ref}/functions/deploy`) is a multipart upload that fails
+> with `TransportError` behind a TLS-re-terminating egress proxy — the assets
+> upload, then the final call dies. `--use-api` fails the same way, and the
+> legacy single-file endpoint now returns 500. Schema migrations are unaffected
+> (they go through `/database/query`, which is a plain JSON POST).
 
 ## 4. Configure Auth
 
