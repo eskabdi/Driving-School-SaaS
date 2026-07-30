@@ -8,6 +8,20 @@ import { serve } from '../_shared/handler.ts';
 import { problem } from '../_shared/errors.ts';
 import { z } from 'zod';
 
+// Starter practical-skill checklist for Automobile learners (spec §2.1).
+const DEFAULT_AUTOMOBILE_SKILLS = [
+  { code: 'cockpit_drill', en: 'Cockpit drill & controls', am: 'የመቆጣጠሪያ ዝግጅት', om: 'Qophii too\'annoo' },
+  { code: 'moving_off', en: 'Moving off & stopping', am: 'መንቀሳቀስ እና ማቆም', om: 'Ka\'uu fi dhaabuu' },
+  { code: 'steering', en: 'Steering control', am: 'የመሪ ቁጥጥር', om: 'To\'annoo isteeringii' },
+  { code: 'gear_changing', en: 'Gear changing', am: 'ማርሽ መቀየር', om: 'Giyaara jijjiiruu' },
+  { code: 'junctions', en: 'Junctions', am: 'መጋጠሚያዎች', om: 'Wal-qunnamtii' },
+  { code: 'roundabouts', en: 'Roundabouts', am: 'ክብ መንገዶች', om: 'Naanneffannoo' },
+  { code: 'parallel_parking', en: 'Parallel parking', am: 'ትይዩ ማቆም', om: 'Dhaabbii walgitu' },
+  { code: 'reversing', en: 'Reversing', am: 'ወደ ኋላ መንዳት', om: 'Duubatti oofuu' },
+  { code: 'hill_start', en: 'Hill start', am: 'በዳገት መነሳት', om: 'Gaara irraa ka\'uu' },
+  { code: 'emergency_stop', en: 'Emergency stop', am: 'የአስቸኳይ ማቆም', om: 'Dhaabbii ariifachiisaa' },
+];
+
 const schema = z.object({
   schoolName: z.string().min(2).max(200),
   slug: z
@@ -80,6 +94,20 @@ Deno.serve(
         await rollbackTenant();
         throw problem({ code: 'INTERNAL', status: 500, detail: sErr.message });
       }
+
+      // 2b) Default skills for Automobile (category 3) so the evaluation
+      // checklist is usable out of the box (spec §2.1). Tenant-customizable.
+      await service.from('skills').insert(
+        DEFAULT_AUTOMOBILE_SKILLS.map((s, i) => ({
+          tenant_id: tenant.id,
+          license_category_code: '3',
+          code: s.code,
+          name_en: s.en,
+          name_am: s.am,
+          name_om: s.om,
+          sort_order: i + 1,
+        })),
+      );
 
       // 3) Trial subscription.
       const now = new Date();
