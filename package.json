@@ -13,6 +13,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "bootstrap:super-admin": "tsx scripts/bootstrap-super-admin.ts",
+    "db:migrate": "NODE_USE_ENV_PROXY=1 node scripts/supabase-migrate.mjs",
+    "db:bundle": "node scripts/build-sql-bundle.mjs",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
