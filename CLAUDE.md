@@ -84,12 +84,28 @@ Functions.** Never treat a frontend role check as sufficient; a new mutation is
 not safe until its RLS policy (or Edge Function `allowedRoles` + internal
 check) exists.
 
-The JWT carries `tenant_id` / `user_id` / `role` / `branch_id` / `user_status` /
-`tenant_status`, injected by `public.custom_access_token_hook` (migration
-`20260719000500_access_token_hook.sql`). Without enabling this hook in the
-Supabase dashboard (Authentication → Hooks → Access Token), every RLS policy
-evaluates false and the app looks "empty but logged in" — this is the first
-thing to check when a freshly-provisioned environment shows no data.
+The JWT carries `tenant_id` / `user_id` / `user_role` / `branch_id` /
+`user_status` / `tenant_status` / `locale`, injected by
+`public.custom_access_token_hook` (original migration
+`20260719000500_access_token_hook.sql`, corrected by
+`20260719002200_fix_access_token_hook_security_definer.sql` and
+`20260719002300_fix_role_claim_collision.sql`). Without enabling this hook in
+the Supabase dashboard (Authentication → Hooks → Access Token), every RLS
+policy evaluates false and the app looks "empty but logged in" — this is the
+first thing to check when a freshly-provisioned environment shows no data.
+
+Two non-obvious things the fix migrations encode — do not regress them:
+- The hook **must** be `SECURITY DEFINER` with a pinned `search_path`.
+  `supabase_auth_admin` (the role GoTrue invokes it as) lacks `BYPASSRLS`, so
+  without `DEFINER` its own `SELECT` on `public.users`/`public.tenants` is
+  filtered to zero rows by RLS and every JWT is minted with no claims.
+- The app role rides under the claim key **`user_role`**, *not* `role`. The
+  top-level `role` claim is reserved for PostgREST's `role_claim_key` (always
+  `authenticated`); overwriting it with an app role like `school_admin` makes
+  PostgREST `SET ROLE` to a nonexistent Postgres role and every REST query
+  fails `22023`. `get_role_from_jwt()` reads `user_role`, and
+  `auth-context.tsx` decodes `user_role` into `claims.role`, so the rest of
+  the codebase still refers to it as "role".
 
 RLS policies read JWT claims through STABLE SQL helper functions —
 `get_tenant_id_from_jwt()`, `get_role_from_jwt()`, `tenant_is_writable()`,
