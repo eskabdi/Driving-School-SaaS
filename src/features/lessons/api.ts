@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { supabase } from '@/lib/supabase';
 import { normalizeError } from '@/lib/errors';
+import { invokeFunction } from '@/lib/functions';
 import { useAuth } from '@/lib/auth-context';
 
 export type LessonStatus =
@@ -35,6 +36,114 @@ export function useUpcomingLessons(tenantId: string | null) {
         .range(0, 99);
       if (error) throw normalizeError(error);
       return (data ?? []) as unknown as LessonRow[];
+    },
+  });
+}
+
+// --- End-lesson delivery ---------------------------------------------------
+
+export interface LessonParticipant {
+  learnerId: string;
+  learnerName: string;
+  enrollmentId: string | null;
+}
+
+/**
+ * Assigned learners for a lesson, each mapped to their active enrollment (the
+ * hour bank the lesson-complete RPC will charge).
+ */
+export function useLessonParticipants(lessonId: string | null) {
+  return useQuery({
+    queryKey: ['lesson-participants', lessonId],
+    enabled: !!lessonId,
+    queryFn: async (): Promise<LessonParticipant[]> => {
+      const { data: assignments, error } = await supabase
+        .from('lesson_assignments')
+        .select('learner_id, enrollment_id, learner:learners(full_name)')
+        .eq('lesson_id', lessonId);
+      if (error) throw normalizeError(error);
+
+      const rows = (assignments ?? []) as unknown as Array<{
+        learner_id: string;
+        enrollment_id: string | null;
+        learner: { full_name: string } | null;
+      }>;
+
+      // Fall back to the learner's most recent active enrollment when the
+      // assignment didn't pin one.
+      const learnerIds = rows.map((r) => r.learner_id);
+      const enrollmentByLearner = new Map<string, string>();
+      if (learnerIds.length > 0) {
+        const { data: enr } = await supabase
+          .from('enrollments')
+          .select('id, learner_id, status, enrolled_at')
+          .in('learner_id', learnerIds)
+          .in('status', ['active', 'pending_payment'])
+          .order('enrolled_at', { ascending: false });
+        for (const e of (enr ?? []) as Array<{ id: string; learner_id: string }>) {
+          if (!enrollmentByLearner.has(e.learner_id)) {
+            enrollmentByLearner.set(e.learner_id, e.id);
+          }
+        }
+      }
+
+      return rows.map((r) => ({
+        learnerId: r.learner_id,
+        learnerName: r.learner?.full_name ?? '—',
+        enrollmentId: r.enrollment_id ?? enrollmentByLearner.get(r.learner_id) ?? null,
+      }));
+    },
+  });
+}
+
+export interface SkillRow {
+  id: string;
+  code: string;
+  name_en: string;
+  name_am: string | null;
+  name_om: string | null;
+  license_category_code: string;
+}
+
+export function useSkills(tenantId: string | null) {
+  return useQuery({
+    queryKey: ['skills', tenantId],
+    enabled: !!tenantId,
+    queryFn: async (): Promise<SkillRow[]> => {
+      const { data, error } = await supabase
+        .from('skills')
+        .select('id, code, name_en, name_am, name_om, license_category_code')
+        .order('sort_order');
+      if (error) throw normalizeError(error);
+      return (data ?? []) as SkillRow[];
+    },
+  });
+}
+
+export interface CompleteLessonInput {
+  lessonId: string;
+  attendance: Array<{
+    learner_id: string;
+    enrollment_id?: string;
+    status: 'present' | 'late' | 'absent';
+    hours_logged: number;
+  }>;
+  evaluations: Array<{
+    learner_id: string;
+    skill_id?: string;
+    score: number;
+    is_internal?: boolean;
+  }>;
+}
+
+export function useCompleteLesson() {
+  const qc = useQueryClient();
+  return useMutation({
+    mutationFn: (input: CompleteLessonInput) =>
+      invokeFunction<{ lesson_id: string; status: string }>('lesson-complete', input),
+    onSuccess: () => {
+      void qc.invalidateQueries({ queryKey: ['lessons'] });
+      void qc.invalidateQueries({ queryKey: ['learners'] });
     },
   });
 }

@@ -172,6 +172,20 @@
     "cancelled": "Cancelled",
     "no_show": "No-show"
   },
+  "endLesson": {
+    "title": "Complete lesson",
+    "subtitle": "Record attendance, hours, and skill evaluations.",
+    "attendance": "Attendance",
+    "present": "Present",
+    "late": "Late",
+    "absent": "Absent",
+    "hours": "Hours",
+    "hoursHint": "Hours are added to each learner's enrollment hour bank.",
+    "skills": "Skill evaluation",
+    "notScored": "Not scored",
+    "complete": "Complete",
+    "completing": "Completing…"
+  },
   "schedule": {
     "title": "Schedule a lesson",
     "subtitle": "Book a lesson for an instructor and learner.",

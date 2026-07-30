@@ -172,6 +172,20 @@
     "cancelled": "የተሰረዘ",
     "no_show": "ያልቀረበ"
   },
+  "endLesson": {
+    "title": "ትምህርት አጠናቅቅ",
+    "subtitle": "መገኘትን፣ ሰዓቶችን እና የክህሎት ግምገማዎችን ይመዝግቡ።",
+    "attendance": "መገኘት",
+    "present": "ተገኝቷል",
+    "late": "የዘገየ",
+    "absent": "ያልተገኘ",
+    "hours": "ሰዓቶች",
+    "hoursHint": "ሰዓቶች ወደ እያንዳንዱ ተማሪ የምዝገባ ሰዓት ባንክ ይታከላሉ።",
+    "skills": "የክህሎት ግምገማ",
+    "notScored": "ያልተመዘነ",
+    "complete": "አጠናቅቅ",
+    "completing": "በማጠናቀቅ ላይ…"
+  },
   "schedule": {
     "title": "ትምህርት አዘጋጅ",
     "subtitle": "ለአስተማሪ እና ተማሪ ትምህርት ይያዙ።",

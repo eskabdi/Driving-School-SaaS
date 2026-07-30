@@ -9,8 +9,9 @@ import { Badge, type BadgeProps } from '@/components/ui/badge';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { formatIsoAsEthiopian } from '@/lib/eth-calendar';
 import type { SupportedLocale } from '@/lib/i18n';
-import { useUpcomingLessons, type LessonStatus } from './api';
+import { useUpcomingLessons, type LessonStatus, type LessonRow } from './api';
 import { ScheduleLessonDialog } from './ScheduleLessonDialog';
+import { EndLessonDialog } from './EndLessonDialog';
 
 const STATUS_VARIANT: Record<LessonStatus, BadgeProps['variant']> = {
   draft: 'outline',
@@ -35,8 +36,14 @@ export function LessonsPage() {
   const { claims } = useAuth();
   const { data, isLoading } = useUpcomingLessons(claims?.tenant_id ?? null);
   const [scheduling, setScheduling] = useState(false);
+  const [ending, setEnding] = useState<LessonRow | null>(null);
   const canSchedule = roleHasCapability(claims?.role, 'lessons.schedule');
+  const canDeliver =
+    roleHasCapability(claims?.role, 'lessons.deliver') ||
+    roleHasCapability(claims?.role, 'lessons.schedule');
   const locale = (i18n.resolvedLanguage ?? 'en') as SupportedLocale;
+
+  const OPEN_STATUSES: LessonStatus[] = ['scheduled', 'confirmed', 'in_progress'];
 
   return (
     <div className="space-y-6">
@@ -73,6 +80,7 @@ export function LessonsPage() {
                   <th className="px-4 py-3 font-medium">{t('lessons.type')}</th>
                   <th className="px-4 py-3 font-medium">{t('lessons.instructor')}</th>
                   <th className="px-4 py-3 font-medium">{t('lessons.statusLabel')}</th>
+                  {canDeliver && <th className="px-4 py-3" />}
                 </tr>
               </thead>
               <tbody>
@@ -91,6 +99,15 @@ export function LessonsPage() {
                         {t(`lessonStatus.${l.status}`)}
                       </Badge>
                     </td>
+                    {canDeliver && (
+                      <td className="px-4 py-3 text-right">
+                        {OPEN_STATUSES.includes(l.status) && (
+                          <Button size="sm" variant="outline" onClick={() => setEnding(l)}>
+                            {t('endLesson.complete')}
+                          </Button>
+                        )}
+                      </td>
+                    )}
                   </tr>
                 ))}
               </tbody>
@@ -100,6 +117,13 @@ export function LessonsPage() {
       </Card>
 
       {scheduling && <ScheduleLessonDialog open={scheduling} onOpenChange={setScheduling} />}
+      {ending && (
+        <EndLessonDialog
+          lesson={ending}
+          open={!!ending}
+          onOpenChange={(o) => !o && setEnding(null)}
+        />
+      )}
     </div>
   );
 }

@@ -172,6 +172,20 @@
     "cancelled": "Haqame",
     "no_show": "Hin dhufne"
   },
+  "endLesson": {
+    "title": "Barnoota xumuri",
+    "subtitle": "Argamuu, sa'aatii fi madaallii dandeettii galmeessi.",
+    "attendance": "Argamuu",
+    "present": "Argame",
+    "late": "Turee",
+    "absent": "Hin argamne",
+    "hours": "Sa'aatii",
+    "hoursHint": "Sa'aatiin baankii sa'aatii galmee barataa hundaatti dabalama.",
+    "skills": "Madaallii dandeettii",
+    "notScored": "Hin madaalamne",
+    "complete": "Xumuri",
+    "completing": "Xumuraa jira…"
+  },
   "schedule": {
     "title": "Barnoota qabsiisi",
     "subtitle": "Barsiisaa fi barataadhaaf barnoota qabsiisi.",
