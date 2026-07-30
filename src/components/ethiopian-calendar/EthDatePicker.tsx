@@ -118,13 +118,41 @@ export function EthDatePicker({
     setOpen(false);
   }
 
-  const headerLabel =
-    displayCalendar === 'ethiopian'
-      ? `${ETHIOPIAN_MONTHS[locale][cursor.month - 1]} ${cursor.year}`
-      : (() => {
-          const g = ethiopianToGregorian({ ...cursor, day: 1 });
-          return `${GREG_MONTHS[g.getUTCMonth()]} ${g.getUTCFullYear()}`;
-        })();
+  // Month-by-month navigation alone makes distant dates (a learner's date of
+  // birth, an instructor's hire date) hundreds of clicks away. These let the
+  // header jump straight to a month/year instead.
+  const displayGregorian = ethiopianToGregorian({ ...cursor, day: 1 });
+  const monthOptions = displayCalendar === 'ethiopian' ? ETHIOPIAN_MONTHS[locale] : GREG_MONTHS;
+  const monthValue = displayCalendar === 'ethiopian' ? cursor.month - 1 : displayGregorian.getUTCMonth();
+  const yearValue = displayCalendar === 'ethiopian' ? cursor.year : displayGregorian.getUTCFullYear();
+
+  const yearOptions = useMemo(() => {
+    const anchor =
+      displayCalendar === 'ethiopian'
+        ? gregorianToEthiopian(new Date()).year
+        : new Date().getUTCFullYear();
+    const years: number[] = [];
+    for (let y = anchor + 10; y >= anchor - 100; y--) years.push(y);
+    return years;
+  }, [displayCalendar]);
+
+  function handleMonthSelect(monthIndex: number) {
+    if (displayCalendar === 'ethiopian') {
+      setCursor({ year: cursor.year, month: monthIndex + 1, day: 1 });
+    } else {
+      const g = new Date(Date.UTC(displayGregorian.getUTCFullYear(), monthIndex, 1));
+      setCursor(gregorianToEthiopian(g));
+    }
+  }
+
+  function handleYearSelect(year: number) {
+    if (displayCalendar === 'ethiopian') {
+      setCursor({ year, month: cursor.month, day: 1 });
+    } else {
+      const g = new Date(Date.UTC(year, displayGregorian.getUTCMonth(), 1));
+      setCursor(gregorianToEthiopian(g));
+    }
+  }
 
   return (
     <div className={cn('relative', className)}>
@@ -143,11 +171,34 @@ export function EthDatePicker({
 
       {open && (
         <div className="absolute z-50 mt-1 w-72 rounded-md border bg-popover p-3 text-popover-foreground shadow-md">
-          <div className="mb-2 flex items-center justify-between">
+          <div className="mb-2 flex items-center gap-1">
             <Button type="button" variant="ghost" size="icon" onClick={() => move(-1)}>
               <ChevronLeft className="h-4 w-4" />
             </Button>
-            <span className="text-sm font-medium">{headerLabel}</span>
+            <select
+              aria-label="Month"
+              value={monthValue}
+              onChange={(e) => handleMonthSelect(Number(e.target.value))}
+              className="h-8 min-w-0 flex-1 rounded-md border border-input bg-background px-1 text-xs"
+            >
+              {monthOptions.map((name, idx) => (
+                <option key={idx} value={idx}>
+                  {name}
+                </option>
+              ))}
+            </select>
+            <select
+              aria-label="Year"
+              value={yearValue}
+              onChange={(e) => handleYearSelect(Number(e.target.value))}
+              className="h-8 w-[4.5rem] rounded-md border border-input bg-background px-1 text-xs"
+            >
+              {yearOptions.map((y) => (
+                <option key={y} value={y}>
+                  {y}
+                </option>
+              ))}
+            </select>
             <Button type="button" variant="ghost" size="icon" onClick={() => move(1)}>
               <ChevronRight className="h-4 w-4" />
             </Button>
