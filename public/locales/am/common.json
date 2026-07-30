@@ -206,7 +206,37 @@
     "confirm": "አዘጋጅ",
     "scheduling": "በማዘጋጀት ላይ…"
   },
-  "finance": { "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።" },
+  "finance": {
+    "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።",
+    "empty": "ክፍት ደረሰኝ የለም።",
+    "invoice": "ደረሰኝ",
+    "learner": "ተማሪ",
+    "total": "ጠቅላላ",
+    "balance": "ቀሪ ሂሳብ",
+    "statusLabel": "ሁኔታ",
+    "record": "ክፍያ መዝግብ",
+    "recordTitle": "ክፍያ መዝግብ",
+    "recordSubtitle": "{{learner}} — ቀሪ ሂሳብ {{balance}} ብር።",
+    "amount": "መጠን (ብር)",
+    "method": "ዘዴ",
+    "cash": "ጥሬ ገንዘብ",
+    "bankTransfer": "የባንክ ዝውውር",
+    "cheque": "ቼክ",
+    "reference": "ማጣቀሻ",
+    "referenceRequired": "ለጥሬ ገንዘብ ላልሆኑ ክፍያዎች ማጣቀሻ ያስፈልጋል።",
+    "recording": "በመመዝገብ ላይ…",
+    "recorded": "ክፍያ ተመዝግቧል።",
+    "receipt": "ደረሰኝ"
+  },
+  "invoiceStatus": {
+    "draft": "ረቂቅ",
+    "issued": "የወጣ",
+    "partially_paid": "በከፊል የተከፈለ",
+    "paid": "የተከፈለ",
+    "overdue": "ጊዜው ያለፈ",
+    "void": "የተሰረዘ",
+    "refunded": "ተመላሽ የተደረገ"
+  },
   "certificates": { "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።" },
   "settings": {
     "subtitle": "የትምህርት ቤት ውቅር፣ ቅርንጫፎች እና ብራንድ።",

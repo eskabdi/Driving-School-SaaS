@@ -206,7 +206,37 @@
     "confirm": "Qabsiisi",
     "scheduling": "Qabsiisaa jira…"
   },
-  "finance": { "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa." },
+  "finance": {
+    "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa.",
+    "empty": "Nagaheen banaa hin jiru.",
+    "invoice": "Nagahee",
+    "learner": "Barataa",
+    "total": "Ida'ama",
+    "balance": "Hafteessa",
+    "statusLabel": "Haala",
+    "record": "Kaffaltii galmeessi",
+    "recordTitle": "Kaffaltii galmeessi",
+    "recordSubtitle": "{{learner}} — hafteessa {{balance}} ETB.",
+    "amount": "Hamma (ETB)",
+    "method": "Mala",
+    "cash": "Maallaqa harkaa",
+    "bankTransfer": "Dabarsa baankii",
+    "cheque": "Caakii",
+    "reference": "Wabii",
+    "referenceRequired": "Kaffaltii maallaqa harkaa hin taanef wabiin barbaachisaa dha.",
+    "recording": "Galmeessaa jira…",
+    "recorded": "Kaffaltiin galmaa'e.",
+    "receipt": "Nagahee"
+  },
+  "invoiceStatus": {
+    "draft": "Wixinee",
+    "issued": "Ba'e",
+    "partially_paid": "Gartokkoon kaffalame",
+    "paid": "Kaffalame",
+    "overdue": "Yeroon darbe",
+    "void": "Haqame",
+    "refunded": "Deebi'e"
+  },
   "certificates": { "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi." },
   "settings": {
     "subtitle": "Qindaa'ina mana barumsaa, damee fi mallattoo.",

@@ -206,7 +206,37 @@
     "confirm": "Schedule",
     "scheduling": "Scheduling…"
   },
-  "finance": { "subtitle": "Invoices, payments, and refunds." },
+  "finance": {
+    "subtitle": "Invoices, payments, and refunds.",
+    "empty": "No open invoices.",
+    "invoice": "Invoice",
+    "learner": "Learner",
+    "total": "Total",
+    "balance": "Balance",
+    "statusLabel": "Status",
+    "record": "Record payment",
+    "recordTitle": "Record payment",
+    "recordSubtitle": "{{learner}} — outstanding balance {{balance}} ETB.",
+    "amount": "Amount (ETB)",
+    "method": "Method",
+    "cash": "Cash",
+    "bankTransfer": "Bank transfer",
+    "cheque": "Cheque",
+    "reference": "Reference",
+    "referenceRequired": "A reference is required for non-cash payments.",
+    "recording": "Recording…",
+    "recorded": "Payment recorded.",
+    "receipt": "Receipt"
+  },
+  "invoiceStatus": {
+    "draft": "Draft",
+    "issued": "Issued",
+    "partially_paid": "Partially paid",
+    "paid": "Paid",
+    "overdue": "Overdue",
+    "void": "Void",
+    "refunded": "Refunded"
+  },
   "certificates": { "subtitle": "Issue and verify certificates and ID cards." },
   "settings": {
     "subtitle": "School configuration, branches, and branding.",

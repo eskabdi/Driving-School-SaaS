@@ -5,11 +5,11 @@ hits PostgREST directly. Each function validates input with a shared Zod schema,
 uses the service-role key only for cross-tenant operations, and returns RFC 7807
 error envelopes (see [spec §7](./build-spec-v2.md)).
 
-> Status: the **Public Registration → Convert → Enroll** vertical is implemented
-> (`submit-public-registration`, `review-public-registration`, `enroll-learner`,
-> plus the shared `_shared/` wrapper). The rest of this index tracks the target
-> surface from blueprint §8 and spec §2 so functions land against a stable
-> contract.
+> Status: implemented so far — `submit-public-registration`,
+> `review-public-registration`, `enroll-learner`, `create-tenant`,
+> `lesson-complete`, `record-payment`, plus the shared `_shared/` wrapper. The
+> rest of this index tracks the target surface from blueprint §8 and spec §2 so
+> functions land against a stable contract.
 
 ## Local dev
 
