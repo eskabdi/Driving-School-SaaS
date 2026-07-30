@@ -320,6 +320,14 @@
     "expired": "Expired",
     "revoked": "Revoked"
   },
+  "branches": {
+    "title": "Branches",
+    "empty": "No branches yet.",
+    "name": "Name",
+    "namePlaceholder": "Branch name",
+    "city": "City",
+    "add": "Add"
+  },
   "comms": {
     "subtitle": "Announcements to learners, instructors, and staff.",
     "empty": "No announcements yet.",

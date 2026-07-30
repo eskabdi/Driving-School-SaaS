@@ -10,6 +10,7 @@ import { Label } from '@/components/ui/label';
 import { PageHeader } from '@/components/layout/PageHeader';
 import type { AppError } from '@/lib/errors';
 import { useTenantSettings, useUpdateTenantSettings, type SettingsPatch } from './api';
+import { BranchesCard } from './BranchesCard';
 
 /**
  * Settings — General tab (spec §4). Editable tenant_settings; save is gated to
@@ -74,6 +75,7 @@ export function SettingsPage() {
           </CardContent>
         </Card>
       ) : (
+        <div className="space-y-6">
         <form onSubmit={onSave}>
           <Card>
             <CardHeader>
@@ -192,6 +194,8 @@ export function SettingsPage() {
             </CardContent>
           </Card>
         </form>
+        <BranchesCard />
+        </div>
       )}
     </div>
   );

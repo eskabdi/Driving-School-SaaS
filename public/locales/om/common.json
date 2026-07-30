@@ -320,6 +320,14 @@
     "expired": "Yeroon darbe",
     "revoked": "Haqame"
   },
+  "branches": {
+    "title": "Dameewwan",
+    "empty": "Hanga ammaatti dameen hin jiru.",
+    "name": "Maqaa",
+    "namePlaceholder": "Maqaa damee",
+    "city": "Magaalaa",
+    "add": "Dabali"
+  },
   "comms": {
     "subtitle": "Beeksisa barattootaa, barsiisotaa fi hojjettootaaf.",
     "empty": "Hanga ammaatti beeksisni hin jiru.",
