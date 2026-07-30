@@ -31,6 +31,7 @@
     "actionCenter": "Action Center",
     "actionCenterSubtitle": "Tasks that need your attention.",
     "actionCenterEmpty": "You're all caught up.",
+    "pendingReviews": "{{count}} registration(s) waiting for review",
     "noTenant": "No school is linked to your account yet."
   },
   "stats": {

@@ -31,6 +31,7 @@
     "actionCenter": "የተግባር ማዕከል",
     "actionCenterSubtitle": "ትኩረት የሚሹ ተግባራት።",
     "actionCenterEmpty": "ሁሉንም አጠናቀዋል።",
+    "pendingReviews": "{{count}} ምዝገባ(ዎች) ግምገማ በመጠባበቅ ላይ",
     "noTenant": "ከመለያዎ ጋር የተገናኘ ትምህርት ቤት የለም።"
   },
   "stats": {

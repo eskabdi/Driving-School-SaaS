@@ -31,6 +31,7 @@
     "actionCenter": "Wiirtuu Hojii",
     "actionCenterSubtitle": "Hojiiwwan xiyyeeffannoo barbaadan.",
     "actionCenterEmpty": "Hunda xumurteetta.",
+    "pendingReviews": "Galmeen {{count}} gamaaggama eegaa jira",
     "noTenant": "Manni barumsaa herrega keessan waliin walitti hin hidhamne."
   },
   "stats": {
