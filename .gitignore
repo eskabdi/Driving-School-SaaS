@@ -39,3 +39,8 @@ supabase/.env
 
 # Testing
 coverage
+
+# Vercel CLI
+.vercel
+.env*
+!.env.example
