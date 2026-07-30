@@ -11,6 +11,7 @@
     "finance": "Faayinaansii",
     "certificates": "Ragaalee",
     "idCards": "Kaardii Eenyummaa",
+    "communication": "Qunnamtii",
     "settings": "Qindaa'ina"
   },
   "action": {
@@ -318,6 +319,25 @@
     "replaced": "Bakka buʼe",
     "expired": "Yeroon darbe",
     "revoked": "Haqame"
+  },
+  "comms": {
+    "subtitle": "Beeksisa barattootaa, barsiisotaa fi hojjettootaaf.",
+    "empty": "Hanga ammaatti beeksisni hin jiru.",
+    "compose": "Beeksisa haaraa",
+    "composeTitle": "Beeksisa haaraa",
+    "composeSubtitle": "Mana barumsaa keetiif beeksisa app keessaa maxxansi.",
+    "subject": "Mata duree",
+    "audience": "Kan dhaqqabu",
+    "message": "Ergaa",
+    "publish": "Maxxansi",
+    "publishing": "Maxxansaa jira…",
+    "audienceValue": {
+      "all": "Hunda",
+      "learners": "Barattoota",
+      "instructors": "Barsiisota",
+      "staff": "Hojjettoota",
+      "branch": "Damee"
+    }
   },
   "verify": {
     "title": "Ragaa mirkaneessi",

@@ -11,6 +11,7 @@
     "finance": "Finance",
     "certificates": "Certificates",
     "idCards": "ID Cards",
+    "communication": "Communication",
     "settings": "Settings"
   },
   "action": {
@@ -318,6 +319,25 @@
     "replaced": "Replaced",
     "expired": "Expired",
     "revoked": "Revoked"
+  },
+  "comms": {
+    "subtitle": "Announcements to learners, instructors, and staff.",
+    "empty": "No announcements yet.",
+    "compose": "New announcement",
+    "composeTitle": "New announcement",
+    "composeSubtitle": "Publish an in-app announcement to your school.",
+    "subject": "Subject",
+    "audience": "Audience",
+    "message": "Message",
+    "publish": "Publish",
+    "publishing": "Publishing…",
+    "audienceValue": {
+      "all": "Everyone",
+      "learners": "Learners",
+      "instructors": "Instructors",
+      "staff": "Staff",
+      "branch": "Branch"
+    }
   },
   "verify": {
     "title": "Verify a certificate",

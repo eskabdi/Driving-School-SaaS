@@ -12,6 +12,7 @@ import {
   ClipboardList,
   Package,
   IdCard,
+  Megaphone,
   LogOut,
 } from 'lucide-react';
 import { useAuth } from '@/lib/auth-context';
@@ -36,6 +37,7 @@ const NAV: NavItem[] = [
   { to: 'finance', labelKey: 'nav.finance', icon: Wallet },
   { to: 'certificates', labelKey: 'nav.certificates', icon: BadgeCheck },
   { to: 'id-cards', labelKey: 'nav.idCards', icon: IdCard },
+  { to: 'communication', labelKey: 'nav.communication', icon: Megaphone },
   { to: 'settings', labelKey: 'nav.settings', icon: Settings },
 ];
 

@@ -11,6 +11,7 @@
     "finance": "ፋይናንስ",
     "certificates": "ሰርተፍኬቶች",
     "idCards": "መታወቂያ ካርዶች",
+    "communication": "ግንኙነት",
     "settings": "ቅንብሮች"
   },
   "action": {
@@ -318,6 +319,25 @@
     "replaced": "የተተካ",
     "expired": "ጊዜው ያለፈ",
     "revoked": "የተሰረዘ"
+  },
+  "comms": {
+    "subtitle": "ለተማሪዎች፣ አስተማሪዎች እና ሰራተኞች ማስታወቂያዎች።",
+    "empty": "እስካሁን ማስታወቂያ የለም።",
+    "compose": "አዲስ ማስታወቂያ",
+    "composeTitle": "አዲስ ማስታወቂያ",
+    "composeSubtitle": "ለትምህርት ቤትዎ በመተግበሪያ ውስጥ ማስታወቂያ ያውጡ።",
+    "subject": "ርዕስ",
+    "audience": "ተቀባይ",
+    "message": "መልእክት",
+    "publish": "አውጣ",
+    "publishing": "በማውጣት ላይ…",
+    "audienceValue": {
+      "all": "ሁሉም",
+      "learners": "ተማሪዎች",
+      "instructors": "አስተማሪዎች",
+      "staff": "ሰራተኞች",
+      "branch": "ቅርንጫፍ"
+    }
   },
   "verify": {
     "title": "ሰርተፍኬት አረጋግጥ",
