@@ -13,6 +13,7 @@
 
 import { serve } from '../_shared/handler.ts';
 import { problem } from '../_shared/errors.ts';
+import { verifyWebhookSignature } from '../_shared/webhook-signature.ts';
 import { z } from 'zod';
 
 const schema = z.object({
@@ -23,28 +24,6 @@ const schema = z.object({
   idempotency_key: z.string().uuid().optional(),
   signature: z.string().optional(),
 });
-
-/** Constant-time compare so a bad signature leaks no timing information. */
-function timingSafeEqual(a: string, b: string): boolean {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
-}
-
-async function hmacSha256Hex(secret: string, message: string): Promise<string> {
-  const key = await crypto.subtle.importKey(
-    'raw',
-    new TextEncoder().encode(secret),
-    { name: 'HMAC', hash: 'SHA-256' },
-    false,
-    ['sign'],
-  );
-  const sig = await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(message));
-  return Array.from(new Uint8Array(sig))
-    .map((b) => b.toString(16).padStart(2, '0'))
-    .join('');
-}
 
 Deno.serve(
   serve({ schema }, async ({ body, service }) => {
@@ -60,11 +39,14 @@ Deno.serve(
       });
     }
 
-    const expected = await hmacSha256Hex(
+    const valid = await verifyWebhookSignature(
       secret,
-      `${body.provider_ref}:${body.amount}:${body.event_type}`,
+      body.provider_ref,
+      body.amount,
+      body.event_type,
+      body.signature,
     );
-    if (!body.signature || !timingSafeEqual(body.signature, expected)) {
+    if (!valid) {
       throw problem({ code: 'FORBIDDEN', status: 403, detail: 'Invalid webhook signature' });
     }
 

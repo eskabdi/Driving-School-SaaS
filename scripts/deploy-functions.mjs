@@ -53,6 +53,13 @@ const handlerSrc = readFileSync(join(SHARED_DIR, 'handler.ts'), 'utf8')
   .split('\n')
   .filter((line) => !/^import .* from '\.\/(cors|errors)\.ts';?$/.test(line.trim()))
   .join('\n');
+// Only some functions use these _shared modules; inline them per-function
+// (keyed by the import specifier) so unused code isn't bundled everywhere.
+const OPTIONAL_SHARED = {
+  'webhook-signature': stripHeaderComment(
+    readFileSync(join(SHARED_DIR, 'webhook-signature.ts'), 'utf8'),
+  ),
+};
 
 function stripHeaderComment(src) {
   return src.replace(/^\/\/.*$/m, '');
@@ -67,10 +74,21 @@ function resolveBareSpecifiers(src) {
 /** Inline _shared/* into one file and dedupe re-declared imports (handler.ts
  * already imports z/createClient; most function files re-import them too). */
 function bundleFunction(slug) {
-  const target = readFileSync(join(FUNCTIONS_DIR, slug, 'index.ts'), 'utf8')
+  const rawTarget = readFileSync(join(FUNCTIONS_DIR, slug, 'index.ts'), 'utf8');
+  const target = rawTarget
     .split('\n')
-    .filter((line) => !/^import .* from '\.\.\/_shared\/(handler|errors)\.ts';?$/.test(line.trim()))
+    .filter(
+      (line) =>
+        !/^import .* from '\.\.\/_shared\/(handler|errors|webhook-signature)\.ts';?$/.test(
+          line.trim(),
+        ),
+    )
     .join('\n');
+
+  // Prepend any optional _shared module this function actually imports.
+  const optional = Object.entries(OPTIONAL_SHARED)
+    .filter(([name]) => rawTarget.includes(`../_shared/${name}.ts`))
+    .flatMap(([name, src]) => [`// --- bundled: _shared/${name}.ts ---`, src]);
 
   const bundled = [
     '// --- bundled: _shared/cors.ts ---',
@@ -79,6 +97,7 @@ function bundleFunction(slug) {
     errorsSrc,
     '// --- bundled: _shared/handler.ts ---',
     handlerSrc,
+    ...optional,
     `// --- ${slug}/index.ts ---`,
     target,
   ].join('\n\n');
