@@ -29,8 +29,25 @@ persist.
 
 ## Coverage goal
 
-One `*_test.sql` per RLS-enabled table. A meta-test should fail CI if any table
-with RLS enabled lacks a corresponding test file (query `pg_policies` /
-`pg_tables` vs. this directory listing). `learners_test.sql` is the reference
-implementation; extend it to `lessons`, `payments`, `invoices`,
-`public_registration_submissions`, `evaluations`, etc.
+One `*_test.sql` per RLS-enabled table, eventually. A meta-test should fail CI
+if any table with RLS enabled lacks a corresponding test file (query
+`pg_policies` / `pg_tables` vs. this directory listing).
+
+Current files:
+- `learners_test.sql` — the reference pattern: cross-tenant isolation +
+  suspended-tenant write block.
+- `payments_test.sql` — the self-read policy that resolves through
+  `invoices.learner_id` (not a direct `payments.learner_id` column), plus
+  cross-tenant isolation.
+- `certificates_test.sql` — the public `verify_certificate()` contract: anon can
+  call it, the payload never exposes PII beyond the holder initial, and
+  `not_found` vs. `revoked` are distinguished without a direct table read.
+- `registrations_write_block_test.sql` — the duplicate-active-phone partial
+  index (non-terminal states only) and the suspended-tenant write block on a
+  second table, to prove the pattern generalizes.
+- `status_transitions_test.sql` — the `enforce_status_transition` guard
+  (migration `20260719001900`): legal edges succeed, illegal edges raise
+  `P0001`, and a no-op status update never trips the guard.
+
+Remaining tables to extend this to: `lessons` (scheduling + double-booking),
+`invoices`, `evaluations`, `refunds`, `id_cards`, `enrollments`.

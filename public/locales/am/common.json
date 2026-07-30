@@ -1,5 +1,7 @@
 {
-  "app": { "name": "የመንጃ ትምህርት ቤት" },
+  "app": {
+    "name": "የመንጃ ትምህርት ቤት"
+  },
   "nav": {
     "dashboard": "ዳሽቦርድ",
     "learners": "ተማሪዎች",
@@ -48,7 +50,12 @@
     "subtitle": "የተማሪ መገለጫዎችን፣ ምዝገባዎችን እና እድገትን ያስተዳድሩ።",
     "empty": "እስካሁን ተማሪ የለም። የመጀመሪያ ተማሪዎን ለመጨመር ምዝገባን ይለውጡ።",
     "enroll": "መዝግብ",
-    "col": { "name": "ስም", "phone": "ስልክ", "category": "ደረጃ", "branch": "ቅርንጫፍ" }
+    "col": {
+      "name": "ስም",
+      "phone": "ስልክ",
+      "category": "ደረጃ",
+      "branch": "ቅርንጫፍ"
+    }
   },
   "packages": {
     "subtitle": "የኮርስ ጥቅሎች፡ ሰዓቶች፣ ዋጋ እና ተቀባይነት።",
@@ -125,7 +132,10 @@
     "licenseNumber": "የፍቃድ ቁጥር",
     "licenseExpiry": "የፍቃድ ማብቂያ",
     "status": "ሁኔታ",
-    "statusValue": { "active": "ንቁ", "inactive": "ንቁ ያልሆነ" },
+    "statusValue": {
+      "active": "ንቁ",
+      "inactive": "ንቁ ያልሆነ"
+    },
     "createTitle": "አዲስ አስተማሪ",
     "createSubtitle": "ወደ ትምህርት ቤትዎ አስተማሪ ይጨምሩ።",
     "create": "ፍጠር",
@@ -403,7 +413,11 @@
     "tenantsSubtitle": "በመድረኩ ላይ ትምህርት ቤቶችን ያስገቡ እና ያስተዳድሩ።",
     "onboardTenant": "ትምህርት ቤት አስገባ",
     "noTenants": "እስካሁን ትምህርት ቤት የለም። የመጀመሪያ ትምህርት ቤትዎን ያስገቡ።",
-    "col": { "name": "ትምህርት ቤት", "slug": "Slug", "status": "ሁኔታ" },
+    "col": {
+      "name": "ትምህርት ቤት",
+      "slug": "Slug",
+      "status": "ሁኔታ"
+    },
     "onboard": {
       "title": "የመንጃ ትምህርት ቤት አስገባ",
       "subtitle": "ተከራይ ይፍጠሩ እና የመጀመሪያ አስተዳዳሪውን ይጋብዙ።",
@@ -455,6 +469,8 @@
     "PRINT_DEVICE_INVALID": "ይህ የህትመት መሳሪያ አልታወቀም።",
     "RATE_LIMITED": "በጣም ብዙ ሙከራዎች። እባክዎ ጠብቀው እንደገና ይሞክሩ።",
     "PROVIDER_UNAVAILABLE": "የክፍያ አቅራቢው አይገኝም። ጥቂት ቆይተው ይሞክሩ።",
-    "INTERNAL": "የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።"
+    "INTERNAL": "የሆነ ስህተት ተፈጥሯል። እባክዎ እንደገና ይሞክሩ።",
+    "INVALID_STATUS_TRANSITION": "ከአሁኑ ሁኔታ ወደዚያ ሁኔታ መቀየር አይፈቀድም።",
+    "PAYMENT_AMOUNT_MISMATCH": "አቅራቢው ከተጠበቀው የተለየ መጠን አሳውቋል። ይህ ክፍያ በእጅ ማስታረቅ ይፈልጋል።"
   }
 }

@@ -1,5 +1,7 @@
 {
-  "app": { "name": "Driving School" },
+  "app": {
+    "name": "Driving School"
+  },
   "nav": {
     "dashboard": "Dashboard",
     "learners": "Learners",
@@ -48,7 +50,12 @@
     "subtitle": "Manage learner profiles, enrollments, and progress.",
     "empty": "No learners yet. Convert a registration to add your first learner.",
     "enroll": "Enroll",
-    "col": { "name": "Name", "phone": "Phone", "category": "Category", "branch": "Branch" }
+    "col": {
+      "name": "Name",
+      "phone": "Phone",
+      "category": "Category",
+      "branch": "Branch"
+    }
   },
   "packages": {
     "subtitle": "Course packages: hours, price, and validity.",
@@ -125,7 +132,10 @@
     "licenseNumber": "License number",
     "licenseExpiry": "License expiry",
     "status": "Status",
-    "statusValue": { "active": "Active", "inactive": "Inactive" },
+    "statusValue": {
+      "active": "Active",
+      "inactive": "Inactive"
+    },
     "createTitle": "New instructor",
     "createSubtitle": "Add an instructor to your school.",
     "create": "Create",
@@ -403,7 +413,11 @@
     "tenantsSubtitle": "Onboard and manage schools on the platform.",
     "onboardTenant": "Onboard school",
     "noTenants": "No schools yet. Onboard your first driving school.",
-    "col": { "name": "School", "slug": "Slug", "status": "Status" },
+    "col": {
+      "name": "School",
+      "slug": "Slug",
+      "status": "Status"
+    },
     "onboard": {
       "title": "Onboard a driving school",
       "subtitle": "Create the tenant and invite its first administrator.",
@@ -455,6 +469,8 @@
     "PRINT_DEVICE_INVALID": "This print device is not recognized.",
     "RATE_LIMITED": "Too many attempts. Please wait and try again.",
     "PROVIDER_UNAVAILABLE": "The payment provider is unavailable. Try again shortly.",
-    "INTERNAL": "Something went wrong. Please try again."
+    "INTERNAL": "Something went wrong. Please try again.",
+    "INVALID_STATUS_TRANSITION": "That status change isn't allowed from the current state.",
+    "PAYMENT_AMOUNT_MISMATCH": "The provider reported a different amount than expected. This payment needs manual reconciliation."
   }
 }

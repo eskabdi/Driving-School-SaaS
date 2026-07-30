@@ -1,5 +1,7 @@
 {
-  "app": { "name": "Mana Barumsa Konkolaataa" },
+  "app": {
+    "name": "Mana Barumsa Konkolaataa"
+  },
   "nav": {
     "dashboard": "Daashboordii",
     "learners": "Barattoota",
@@ -48,7 +50,12 @@
     "subtitle": "Ibsa barattootaa, galmee fi guddina bulchi.",
     "empty": "Hanga ammaatti barataan hin jiru. Barataa jalqabaa dabaluuf galmee jijjiiri.",
     "enroll": "Galmeessi",
-    "col": { "name": "Maqaa", "phone": "Bilbila", "category": "Sadarkaa", "branch": "Damee" }
+    "col": {
+      "name": "Maqaa",
+      "phone": "Bilbila",
+      "category": "Sadarkaa",
+      "branch": "Damee"
+    }
   },
   "packages": {
     "subtitle": "Paakejii koorsii: sa'aatii, gatii fi yeroo dh.",
@@ -125,7 +132,10 @@
     "licenseNumber": "Lakkoofsa hayyamaa",
     "licenseExpiry": "Yeroo hayyamni dhumu",
     "status": "Haala",
-    "statusValue": { "active": "Sochii qabu", "inactive": "Kan hin sochoone" },
+    "statusValue": {
+      "active": "Sochii qabu",
+      "inactive": "Kan hin sochoone"
+    },
     "createTitle": "Barsiisaa haaraa",
     "createSubtitle": "Mana barumsaa keetti barsiisaa dabali.",
     "create": "Uumi",
@@ -403,7 +413,11 @@
     "tenantsSubtitle": "Waltajjii irratti mana barumsaa galchii fi bulchi.",
     "onboardTenant": "Mana barumsaa galchi",
     "noTenants": "Hanga ammaatti manni barumsaa hin jiru. Mana barumsaa jalqabaa galchi.",
-    "col": { "name": "Mana barumsaa", "slug": "Slug", "status": "Haala" },
+    "col": {
+      "name": "Mana barumsaa",
+      "slug": "Slug",
+      "status": "Haala"
+    },
     "onboard": {
       "title": "Mana barumsa konkolaataa galchi",
       "subtitle": "Kiraa uumii bulchaa isaa jalqabaa afeeri.",
@@ -455,6 +469,8 @@
     "PRINT_DEVICE_INVALID": "Meeshaan maxxansaa kun hin beekamne.",
     "RATE_LIMITED": "Yaaliin baay'ee. Maaloo eegii irra deebi'i.",
     "PROVIDER_UNAVAILABLE": "Dhiyeessaan kaffaltii hin argamu. Xiqqoo booda yaali.",
-    "INTERNAL": "Wanti tokko dogoggoreera. Maaloo irra deebi'i."
+    "INTERNAL": "Wanti tokko dogoggoreera. Maaloo irra deebi'i.",
+    "INVALID_STATUS_TRANSITION": "Haala ammaa irraa gara haala sanaatti jijjiiruun hin hayyamamu.",
+    "PAYMENT_AMOUNT_MISMATCH": "Dhiyeessaan hamma eegame irraa adda ta'e gabaase. Kaffaltiin kun harkaan walsimsiisuu barbaada."
   }
 }

@@ -34,6 +34,8 @@ export const ERROR_CODES = [
   'VEHICLE_DOC_EXPIRED',
   'TEMPLATE_TOKEN_UNRESOLVED',
   'PRINT_DEVICE_INVALID',
+  'INVALID_STATUS_TRANSITION',
+  'PAYMENT_AMOUNT_MISMATCH',
   'RATE_LIMITED',
   'PROVIDER_UNAVAILABLE',
   'INTERNAL',
@@ -69,7 +71,7 @@ export function normalizeError(err: unknown): AppError {
   // PostgREST / supabase-js error: { message, code (SQLSTATE), details, hint }.
   if (isRecord(err) && typeof err.message === 'string') {
     const sqlstate = typeof err.code === 'string' ? err.code : undefined;
-    const code = mapSqlStateToCode(sqlstate);
+    const code = mapSqlStateToCode(sqlstate, err.message);
     return {
       type: `https://errors.app/${code}`,
       title: code,
@@ -90,8 +92,12 @@ export function normalizeError(err: unknown): AppError {
   };
 }
 
-/** SQLSTATE → app error code (spec §7.4). */
-function mapSqlStateToCode(sqlstate: string | undefined): ErrorCode {
+/**
+ * SQLSTATE → app error code (spec §7.4). P0001 is a deliberate `raise` from one
+ * of our PL/pgSQL guards, and those messages start with the catalog code, so we
+ * pass the raised code through rather than flattening it to INTERNAL.
+ */
+function mapSqlStateToCode(sqlstate: string | undefined, message?: string): ErrorCode {
   switch (sqlstate) {
     case '23P01': // exclusion_violation
       return 'SCHED_CONFLICT';
@@ -101,6 +107,10 @@ function mapSqlStateToCode(sqlstate: string | undefined): ErrorCode {
       return 'FORBIDDEN';
     case 'PGRST301': // JWT expired
       return 'UNAUTHENTICATED';
+    case 'P0001': {
+      const raised = ERROR_CODES.find((c) => message?.includes(c));
+      return raised ?? 'INTERNAL';
+    }
     default:
       return 'INTERNAL';
   }
@@ -132,6 +142,8 @@ function httpForCode(code: ErrorCode): number {
     case 'VEHICLE_DOC_EXPIRED':
     case 'TEMPLATE_TOKEN_UNRESOLVED':
     case 'PRINT_DEVICE_INVALID':
+    case 'INVALID_STATUS_TRANSITION':
+    case 'PAYMENT_AMOUNT_MISMATCH':
       return 422;
     case 'RATE_LIMITED':
       return 429;
