@@ -12,9 +12,20 @@ const schema = z.object({
 });
 
 Deno.serve(
-  serve({ schema }, async ({ body, service }) => {
-    // TODO: per-IP rate limit (30/min, spec §2.12) via a Postgres unlogged
-    // bucket table before the lookup.
+  serve({ schema }, async ({ body, service, clientIp }) => {
+    // Per-IP rate limit (30/min, spec §2.12) via the unlogged bucket table,
+    // enforced before the lookup. Callers without a resolvable IP share a single
+    // bucket rather than bypassing the limit.
+    const { data: allowed, error: rlError } = await service.rpc('enforce_rate_limit', {
+      p_key: `verify-certificate:${clientIp ?? 'unknown'}`,
+      p_limit: 30,
+      p_window_seconds: 60,
+    });
+    if (rlError) throw problem({ code: 'INTERNAL', status: 500, detail: rlError.message });
+    if (allowed === false) {
+      throw problem({ code: 'RATE_LIMITED', status: 429, retryable: true });
+    }
+
     const { data, error } = await service.rpc('verify_certificate', { p_code: body.code });
     if (error) throw problem({ code: 'INTERNAL', status: 500, detail: error.message });
     return data;

@@ -24,6 +24,9 @@ export interface HandlerCtx<TBody> {
   service: SupabaseClient;
   /** Client scoped to the caller's JWT — RLS applies. Null for public routes. */
   asUser: SupabaseClient | null;
+  /** Best-effort caller IP (first x-forwarded-for hop). Null if unknown. Use for
+   * per-IP throttling on public routes, never as a trust boundary. */
+  clientIp: string | null;
 }
 
 export interface HandlerOptions<TSchema extends z.ZodTypeAny> {
@@ -129,7 +132,15 @@ export function serve<TSchema extends z.ZodTypeAny>(
           })
         : null;
 
-      const result = await fn({ body: parsed.data, auth, requestId, service, asUser });
+      // First hop of x-forwarded-for is the real client behind Supabase's proxy;
+      // fall back to x-real-ip. Best-effort only — spoofable, so never a trust
+      // boundary, but adequate to spread a per-IP throttle.
+      const clientIp =
+        (req.headers.get('x-forwarded-for') ?? '').split(',')[0].trim() ||
+        req.headers.get('x-real-ip') ||
+        null;
+
+      const result = await fn({ body: parsed.data, auth, requestId, service, asUser, clientIp });
 
       log({ requestId, status: 200, role: auth.role, tenantId: auth.tenantId });
       return json(result ?? { ok: true });
