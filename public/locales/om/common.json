@@ -153,7 +153,45 @@
     "create": "Uumi",
     "creating": "Uumaa jira…"
   },
-  "lessons": { "subtitle": "Barnoota yaadaa fi hojii qopheessi." },
+  "lessons": {
+    "subtitle": "Barnoota yaadaa fi hojii qopheessi.",
+    "schedule": "Barnoota qabsiisi",
+    "empty": "Barnoonni dhufu hin jiru. Jalqabuuf tokko qabsiisi.",
+    "date": "Guyyaa",
+    "time": "Yeroo",
+    "type": "Gosa",
+    "instructor": "Barsiisaa",
+    "statusLabel": "Haala"
+  },
+  "lessonStatus": {
+    "draft": "Wixinee",
+    "scheduled": "Qabame",
+    "confirmed": "Mirkanaa'e",
+    "in_progress": "Adeemsa irra",
+    "completed": "Xumurame",
+    "cancelled": "Haqame",
+    "no_show": "Hin dhufne"
+  },
+  "schedule": {
+    "title": "Barnoota qabsiisi",
+    "subtitle": "Barsiisaa fi barataadhaaf barnoota qabsiisi.",
+    "type": "Gosa barnootaa",
+    "theory": "Yaadaa",
+    "practical": "Hojii",
+    "simulator": "Simuleetara",
+    "instructor": "Barsiisaa",
+    "learner": "Barataa",
+    "vehicle": "Konkolaataa",
+    "noVehicle": "Konkolaataa hin jiru",
+    "date": "Guyyaa",
+    "startTime": "Yeroo jalqabaa",
+    "duration": "Daqiiqaa",
+    "select": "Filadhu…",
+    "missingFields": "Maaloo barsiisaa, barataa fi guyyaa filadhu.",
+    "conflict": "Yeroon sun barsiisaa kanaaf beellama jiru waliin walitti bu'a.",
+    "confirm": "Qabsiisi",
+    "scheduling": "Qabsiisaa jira…"
+  },
   "finance": { "subtitle": "Nagahee, kaffaltii fi deebii maallaqaa." },
   "certificates": { "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi." },
   "settings": {

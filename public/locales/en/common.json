@@ -153,7 +153,45 @@
     "create": "Create",
     "creating": "Creating…"
   },
-  "lessons": { "subtitle": "Schedule and deliver theory and practical lessons." },
+  "lessons": {
+    "subtitle": "Schedule and deliver theory and practical lessons.",
+    "schedule": "Schedule lesson",
+    "empty": "No upcoming lessons. Schedule one to get started.",
+    "date": "Date",
+    "time": "Time",
+    "type": "Type",
+    "instructor": "Instructor",
+    "statusLabel": "Status"
+  },
+  "lessonStatus": {
+    "draft": "Draft",
+    "scheduled": "Scheduled",
+    "confirmed": "Confirmed",
+    "in_progress": "In progress",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "no_show": "No-show"
+  },
+  "schedule": {
+    "title": "Schedule a lesson",
+    "subtitle": "Book a lesson for an instructor and learner.",
+    "type": "Lesson type",
+    "theory": "Theory",
+    "practical": "Practical",
+    "simulator": "Simulator",
+    "instructor": "Instructor",
+    "learner": "Learner",
+    "vehicle": "Vehicle",
+    "noVehicle": "No vehicle",
+    "date": "Date",
+    "startTime": "Start time",
+    "duration": "Minutes",
+    "select": "Select…",
+    "missingFields": "Please select an instructor, learner, and date.",
+    "conflict": "That time slot conflicts with an existing booking for this instructor.",
+    "confirm": "Schedule",
+    "scheduling": "Scheduling…"
+  },
   "finance": { "subtitle": "Invoices, payments, and refunds." },
   "certificates": { "subtitle": "Issue and verify certificates and ID cards." },
   "settings": {

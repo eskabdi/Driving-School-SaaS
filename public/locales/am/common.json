@@ -153,7 +153,45 @@
     "create": "ፍጠር",
     "creating": "በመፍጠር ላይ…"
   },
-  "lessons": { "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።" },
+  "lessons": {
+    "subtitle": "የንድፈ ሀሳብ እና ተግባራዊ ትምህርቶችን ያዘጋጁ።",
+    "schedule": "ትምህርት አዘጋጅ",
+    "empty": "ቀጣይ ትምህርት የለም። ለመጀመር አንድ ያዘጋጁ።",
+    "date": "ቀን",
+    "time": "ሰዓት",
+    "type": "ዓይነት",
+    "instructor": "አስተማሪ",
+    "statusLabel": "ሁኔታ"
+  },
+  "lessonStatus": {
+    "draft": "ረቂቅ",
+    "scheduled": "የተያዘ",
+    "confirmed": "የተረጋገጠ",
+    "in_progress": "በሂደት ላይ",
+    "completed": "የተጠናቀቀ",
+    "cancelled": "የተሰረዘ",
+    "no_show": "ያልቀረበ"
+  },
+  "schedule": {
+    "title": "ትምህርት አዘጋጅ",
+    "subtitle": "ለአስተማሪ እና ተማሪ ትምህርት ይያዙ።",
+    "type": "የትምህርት ዓይነት",
+    "theory": "ንድፈ ሀሳብ",
+    "practical": "ተግባራዊ",
+    "simulator": "ሲሙሌተር",
+    "instructor": "አስተማሪ",
+    "learner": "ተማሪ",
+    "vehicle": "ተሽከርካሪ",
+    "noVehicle": "ተሽከርካሪ የለም",
+    "date": "ቀን",
+    "startTime": "የመጀመሪያ ሰዓት",
+    "duration": "ደቂቃዎች",
+    "select": "ይምረጡ…",
+    "missingFields": "እባክዎ አስተማሪ፣ ተማሪ እና ቀን ይምረጡ።",
+    "conflict": "ያ የጊዜ ክፍተት ለዚህ አስተማሪ ካለ ቀጠሮ ጋር ይጋጫል።",
+    "confirm": "አዘጋጅ",
+    "scheduling": "በማዘጋጀት ላይ…"
+  },
   "finance": { "subtitle": "ደረሰኞች፣ ክፍያዎች እና ተመላሽ ገንዘቦች።" },
   "certificates": { "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።" },
   "settings": {
