@@ -237,7 +237,52 @@
     "void": "የተሰረዘ",
     "refunded": "ተመላሽ የተደረገ"
   },
-  "certificates": { "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።" },
+  "certificates": {
+    "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።",
+    "empty": "እስካሁን የወጣ ሰርተፍኬት የለም።",
+    "issue": "ሰርተፍኬት አውጣ",
+    "issuing": "በማውጣት ላይ…",
+    "issueTitle": "ሰርተፍኬት አውጣ",
+    "issueSubtitle": "ለተማሪ ሰርተፍኬት ያውጡ።",
+    "issued": "ሰርተፍኬት ወጥቷል።",
+    "learner": "ተማሪ",
+    "selectLearner": "ተማሪ ይምረጡ…",
+    "learnerRequired": "እባክዎ ተማሪ ይምረጡ።",
+    "type": "ዓይነት",
+    "serial": "መለያ ቁጥር",
+    "code": "የማረጋገጫ ኮድ",
+    "issuedOn": "የወጣበት ቀን",
+    "statusLabel": "ሁኔታ",
+    "revoke": "ሰርዝ",
+    "revokeReason": "ይህን ሰርተፍኬት ለመሰረዝ ምክንያት፡"
+  },
+  "certificateType": {
+    "course_completion": "የኮርስ ማጠናቀቅ",
+    "hours_completion": "የሰዓት ማጠናቀቅ",
+    "skill_mastery": "የክህሎት ብቃት",
+    "mock_exam_pass": "የሙከራ ፈተና ማለፍ",
+    "enrollment_confirmation": "የምዝገባ ማረጋገጫ"
+  },
+  "certificateStatus": {
+    "active": "ንቁ",
+    "revoked": "የተሰረዘ",
+    "expired": "ጊዜው ያለፈ"
+  },
+  "verify": {
+    "title": "ሰርተፍኬት አረጋግጥ",
+    "subtitle": "ሁኔታውን ለማረጋገጥ የሰርተፍኬቱን የማረጋገጫ ኮድ ያስገቡ።",
+    "placeholder": "የማረጋገጫ ኮድ",
+    "check": "አረጋግጥ",
+    "type": "ዓይነት",
+    "holder": "ባለቤት",
+    "school": "ትምህርት ቤት",
+    "status": {
+      "valid": "ትክክለኛ ሰርተፍኬት",
+      "expired": "ጊዜው ያለፈ",
+      "revoked": "የተሰረዘ",
+      "not_found": "በዚያ ኮድ ምንም ሰርተፍኬት አልተገኘም"
+    }
+  },
   "settings": {
     "subtitle": "የትምህርት ቤት ውቅር፣ ቅርንጫፎች እና ብራንድ።",
     "general": "አጠቃላይ",

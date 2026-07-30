@@ -37,6 +37,9 @@ const SettingsPage = lazy(() => named(import('@/features/settings/SettingsPage')
 const PublicRegistrationPage = lazy(() =>
   named(import('@/features/public-registration/PublicRegistrationPage'), 'PublicRegistrationPage'),
 );
+const PublicVerifyPage = lazy(() =>
+  named(import('@/features/certificates/PublicVerifyPage'), 'PublicVerifyPage'),
+);
 const PlatformConsole = lazy(() =>
   named(import('@/features/platform/PlatformConsole'), 'PlatformConsole'),
 );
@@ -71,6 +74,7 @@ export const router = createBrowserRouter([
   { path: '/', element: <RootRedirect /> },
   { path: '/login', element: lazyPage(<LoginPage />), errorElement: <RouteError /> },
   { path: '/r/:slug', element: lazyPage(<PublicRegistrationPage />), errorElement: <RouteError /> },
+  { path: '/verify', element: lazyPage(<PublicVerifyPage />), errorElement: <RouteError /> },
   { path: '/forbidden', element: <ForbiddenPage /> },
 
   {

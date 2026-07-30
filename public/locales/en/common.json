@@ -237,7 +237,52 @@
     "void": "Void",
     "refunded": "Refunded"
   },
-  "certificates": { "subtitle": "Issue and verify certificates and ID cards." },
+  "certificates": {
+    "subtitle": "Issue and verify certificates and ID cards.",
+    "empty": "No certificates issued yet.",
+    "issue": "Issue certificate",
+    "issuing": "Issuing…",
+    "issueTitle": "Issue certificate",
+    "issueSubtitle": "Issue a certificate for a learner.",
+    "issued": "Certificate issued.",
+    "learner": "Learner",
+    "selectLearner": "Select a learner…",
+    "learnerRequired": "Please select a learner.",
+    "type": "Type",
+    "serial": "Serial",
+    "code": "Verification code",
+    "issuedOn": "Issued on",
+    "statusLabel": "Status",
+    "revoke": "Revoke",
+    "revokeReason": "Reason for revoking this certificate:"
+  },
+  "certificateType": {
+    "course_completion": "Course completion",
+    "hours_completion": "Hours completion",
+    "skill_mastery": "Skill mastery",
+    "mock_exam_pass": "Mock exam pass",
+    "enrollment_confirmation": "Enrollment confirmation"
+  },
+  "certificateStatus": {
+    "active": "Active",
+    "revoked": "Revoked",
+    "expired": "Expired"
+  },
+  "verify": {
+    "title": "Verify a certificate",
+    "subtitle": "Enter a certificate's verification code to check its status.",
+    "placeholder": "Verification code",
+    "check": "Verify",
+    "type": "Type",
+    "holder": "Holder",
+    "school": "School",
+    "status": {
+      "valid": "Valid certificate",
+      "expired": "Expired",
+      "revoked": "Revoked",
+      "not_found": "No certificate found for that code"
+    }
+  },
   "settings": {
     "subtitle": "School configuration, branches, and branding.",
     "general": "General",

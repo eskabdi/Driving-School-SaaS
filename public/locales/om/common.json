@@ -237,7 +237,52 @@
     "void": "Haqame",
     "refunded": "Deebi'e"
   },
-  "certificates": { "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi." },
+  "certificates": {
+    "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi.",
+    "empty": "Hanga ammaatti ragaan baʼe hin jiru.",
+    "issue": "Ragaa baasi",
+    "issuing": "Baasaa jira…",
+    "issueTitle": "Ragaa baasi",
+    "issueSubtitle": "Barataadhaaf ragaa baasi.",
+    "issued": "Ragaan baʼe.",
+    "learner": "Barataa",
+    "selectLearner": "Barataa filadhu…",
+    "learnerRequired": "Maaloo barataa filadhu.",
+    "type": "Gosa",
+    "serial": "Lakkoofsa waraqaa",
+    "code": "Koodii mirkaneessaa",
+    "issuedOn": "Guyyaa baʼe",
+    "statusLabel": "Haala",
+    "revoke": "Haqi",
+    "revokeReason": "Sababa ragaa kana haquuf:"
+  },
+  "certificateType": {
+    "course_completion": "Xumura koorsii",
+    "hours_completion": "Xumura sa'aatii",
+    "skill_mastery": "Ogummaa dandeettii",
+    "mock_exam_pass": "Qormaata fakkeenyaa darbuu",
+    "enrollment_confirmation": "Mirkaneessa galmee"
+  },
+  "certificateStatus": {
+    "active": "Sochii qabu",
+    "revoked": "Haqame",
+    "expired": "Yeroon darbe"
+  },
+  "verify": {
+    "title": "Ragaa mirkaneessi",
+    "subtitle": "Haala ragaa mirkaneessuuf koodii mirkaneessaa galchi.",
+    "placeholder": "Koodii mirkaneessaa",
+    "check": "Mirkaneessi",
+    "type": "Gosa",
+    "holder": "Abbaa",
+    "school": "Mana barumsaa",
+    "status": {
+      "valid": "Ragaa sirrii",
+      "expired": "Yeroon darbe",
+      "revoked": "Haqame",
+      "not_found": "Koodii sanaaf ragaan hin argamne"
+    }
+  },
   "settings": {
     "subtitle": "Qindaa'ina mana barumsaa, damee fi mallattoo.",
     "general": "Waliigalaa",
