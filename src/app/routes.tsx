@@ -34,6 +34,7 @@ const CertificatesPage = lazy(() =>
   named(import('@/features/certificates/CertificatesPage'), 'CertificatesPage'),
 );
 const SettingsPage = lazy(() => named(import('@/features/settings/SettingsPage'), 'SettingsPage'));
+const IdCardsPage = lazy(() => named(import('@/features/id-cards/IdCardsPage'), 'IdCardsPage'));
 const PublicRegistrationPage = lazy(() =>
   named(import('@/features/public-registration/PublicRegistrationPage'), 'PublicRegistrationPage'),
 );
@@ -67,6 +68,7 @@ const moduleRoutes = [
   { path: 'lessons', element: lazyPage(<LessonsPage />) },
   { path: 'finance', element: lazyPage(<FinancePage />) },
   { path: 'certificates', element: lazyPage(<CertificatesPage />) },
+  { path: 'id-cards', element: lazyPage(<IdCardsPage />) },
   { path: 'settings', element: lazyPage(<SettingsPage />) },
 ];
 

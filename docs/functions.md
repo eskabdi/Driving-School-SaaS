@@ -7,10 +7,11 @@ error envelopes (see [spec §7](./build-spec-v2.md)).
 
 > Status: implemented so far — `submit-public-registration`,
 > `review-public-registration`, `enroll-learner`, `create-tenant`,
-> `lesson-complete`, `record-payment`, `issue-certificate`,
-> `revoke-certificate`, `verify-certificate`, plus the shared `_shared/`
-> wrapper. The rest of this index tracks the target surface from blueprint §8 and
-> spec §2 so functions land against a stable contract.
+> `lesson-complete`, `record-payment`, `request-refund`, `decide-refund`,
+> `issue-certificate`, `revoke-certificate`, `verify-certificate`,
+> `issue-id-card`, plus the shared `_shared/` wrapper. The rest of this index
+> tracks the target surface from blueprint §8 and spec §2 so functions land
+> against a stable contract.
 
 ## Local dev
 

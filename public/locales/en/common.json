@@ -10,6 +10,7 @@
     "lessons": "Lessons",
     "finance": "Finance",
     "certificates": "Certificates",
+    "idCards": "ID Cards",
     "settings": "Settings"
   },
   "action": {
@@ -290,6 +291,32 @@
     "active": "Active",
     "revoked": "Revoked",
     "expired": "Expired"
+  },
+  "idCards": {
+    "subtitle": "Issue and manage learner and instructor ID cards.",
+    "empty": "No ID cards issued yet.",
+    "issue": "Issue card",
+    "issuing": "Issuing…",
+    "issueTitle": "Issue ID card",
+    "issueSubtitle": "Issue an ID card for a learner or instructor.",
+    "issued": "ID card issued.",
+    "holderType": "Holder type",
+    "holder": "Holder",
+    "selectHolder": "Select a holder…",
+    "holderRequired": "Please select a holder.",
+    "learner": "Learner",
+    "instructor": "Instructor",
+    "number": "Card number",
+    "expiresOn": "Expires on",
+    "statusLabel": "Status"
+  },
+  "cardStatus": {
+    "draft": "Draft",
+    "active": "Active",
+    "lost": "Lost",
+    "replaced": "Replaced",
+    "expired": "Expired",
+    "revoked": "Revoked"
   },
   "verify": {
     "title": "Verify a certificate",

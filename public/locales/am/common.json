@@ -10,6 +10,7 @@
     "lessons": "ትምህርቶች",
     "finance": "ፋይናንስ",
     "certificates": "ሰርተፍኬቶች",
+    "idCards": "መታወቂያ ካርዶች",
     "settings": "ቅንብሮች"
   },
   "action": {
@@ -290,6 +291,32 @@
     "active": "ንቁ",
     "revoked": "የተሰረዘ",
     "expired": "ጊዜው ያለፈ"
+  },
+  "idCards": {
+    "subtitle": "የተማሪ እና የአስተማሪ መታወቂያ ካርዶችን ያውጡ እና ያስተዳድሩ።",
+    "empty": "እስካሁን የወጣ መታወቂያ ካርድ የለም።",
+    "issue": "ካርድ አውጣ",
+    "issuing": "በማውጣት ላይ…",
+    "issueTitle": "መታወቂያ ካርድ አውጣ",
+    "issueSubtitle": "ለተማሪ ወይም ለአስተማሪ መታወቂያ ካርድ ያውጡ።",
+    "issued": "መታወቂያ ካርድ ወጥቷል።",
+    "holderType": "የባለቤት ዓይነት",
+    "holder": "ባለቤት",
+    "selectHolder": "ባለቤት ይምረጡ…",
+    "holderRequired": "እባክዎ ባለቤት ይምረጡ።",
+    "learner": "ተማሪ",
+    "instructor": "አስተማሪ",
+    "number": "የካርድ ቁጥር",
+    "expiresOn": "የሚያበቃበት ቀን",
+    "statusLabel": "ሁኔታ"
+  },
+  "cardStatus": {
+    "draft": "ረቂቅ",
+    "active": "ንቁ",
+    "lost": "የጠፋ",
+    "replaced": "የተተካ",
+    "expired": "ጊዜው ያለፈ",
+    "revoked": "የተሰረዘ"
   },
   "verify": {
     "title": "ሰርተፍኬት አረጋግጥ",

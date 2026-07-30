@@ -10,6 +10,7 @@
     "lessons": "Barnoota",
     "finance": "Faayinaansii",
     "certificates": "Ragaalee",
+    "idCards": "Kaardii Eenyummaa",
     "settings": "Qindaa'ina"
   },
   "action": {
@@ -290,6 +291,32 @@
     "active": "Sochii qabu",
     "revoked": "Haqame",
     "expired": "Yeroon darbe"
+  },
+  "idCards": {
+    "subtitle": "Kaardii eenyummaa barattootaa fi barsiisotaa baasii bulchi.",
+    "empty": "Hanga ammaatti kaardiin eenyummaa hin baane.",
+    "issue": "Kaardii baasi",
+    "issuing": "Baasaa jira…",
+    "issueTitle": "Kaardii eenyummaa baasi",
+    "issueSubtitle": "Barataa yookaan barsiisaadhaaf kaardii eenyummaa baasi.",
+    "issued": "Kaardiin eenyummaa baʼe.",
+    "holderType": "Gosa abbaa",
+    "holder": "Abbaa",
+    "selectHolder": "Abbaa filadhu…",
+    "holderRequired": "Maaloo abbaa filadhu.",
+    "learner": "Barataa",
+    "instructor": "Barsiisaa",
+    "number": "Lakkoofsa kaardii",
+    "expiresOn": "Guyyaa dhumu",
+    "statusLabel": "Haala"
+  },
+  "cardStatus": {
+    "draft": "Wixinee",
+    "active": "Sochii qabu",
+    "lost": "Bade",
+    "replaced": "Bakka buʼe",
+    "expired": "Yeroon darbe",
+    "revoked": "Haqame"
   },
   "verify": {
     "title": "Ragaa mirkaneessi",
