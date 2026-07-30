@@ -237,6 +237,29 @@
     "void": "Haqame",
     "refunded": "Deebi'e"
   },
+  "refunds": {
+    "refundable": "Kaffaltii deebi'uu danda'an",
+    "pending": "Deebii eegaa jiran",
+    "request": "Deebisi",
+    "requesting": "Gaafachaa jira…",
+    "requestTitle": "Deebii gaafadhu",
+    "requestSubtitle": "Kaffaltii {{learner}} deebisi.",
+    "amount": "Hamma (ETB)",
+    "method": "Mala",
+    "providerReversal": "Deebii dhiyeessaa",
+    "reason": "Sababa",
+    "approve": "Mirkaneessi",
+    "reject": "Didi",
+    "complete": "Akka xumurameetti mallatteessi",
+    "status": {
+      "requested": "Gaafatame",
+      "approved": "Mirkanaa'e",
+      "processing": "Adeemsa irra",
+      "completed": "Xumurame",
+      "rejected": "Didame",
+      "failed": "Hin milkoofne"
+    }
+  },
   "certificates": {
     "subtitle": "Ragaalee fi kaardii eenyummaa baasii mirkaneessi.",
     "empty": "Hanga ammaatti ragaan baʼe hin jiru.",

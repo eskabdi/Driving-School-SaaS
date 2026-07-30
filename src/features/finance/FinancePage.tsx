@@ -9,6 +9,7 @@ import { Badge, type BadgeProps } from '@/components/ui/badge';
 import { PageHeader } from '@/components/layout/PageHeader';
 import { useOpenInvoices, type InvoiceRow, type InvoiceStatus } from './api';
 import { RecordPaymentDialog } from './RecordPaymentDialog';
+import { RefundsSection } from './RefundsSection';
 
 const STATUS_VARIANT: Record<InvoiceStatus, BadgeProps['variant']> = {
   draft: 'outline',
@@ -82,6 +83,8 @@ export function FinancePage() {
           )}
         </CardContent>
       </Card>
+
+      <RefundsSection />
 
       {paying && (
         <RecordPaymentDialog

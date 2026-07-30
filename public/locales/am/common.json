@@ -237,6 +237,29 @@
     "void": "የተሰረዘ",
     "refunded": "ተመላሽ የተደረገ"
   },
+  "refunds": {
+    "refundable": "ተመላሽ ሊደረጉ የሚችሉ ክፍያዎች",
+    "pending": "በመጠባበቅ ላይ ያሉ ተመላሾች",
+    "request": "ተመላሽ",
+    "requesting": "በመጠየቅ ላይ…",
+    "requestTitle": "ተመላሽ ጠይቅ",
+    "requestSubtitle": "ለ{{learner}} ክፍያ ተመላሽ ያድርጉ።",
+    "amount": "መጠን (ብር)",
+    "method": "ዘዴ",
+    "providerReversal": "በአቅራቢ መመለስ",
+    "reason": "ምክንያት",
+    "approve": "አጽድቅ",
+    "reject": "አትቀበል",
+    "complete": "እንደተጠናቀቀ ምልክት አድርግ",
+    "status": {
+      "requested": "የተጠየቀ",
+      "approved": "የጸደቀ",
+      "processing": "በሂደት ላይ",
+      "completed": "የተጠናቀቀ",
+      "rejected": "ተቀባይነት ያላገኘ",
+      "failed": "ያልተሳካ"
+    }
+  },
   "certificates": {
     "subtitle": "ሰርተፍኬቶችን እና መታወቂያ ካርዶችን ያውጡ እና ያረጋግጡ።",
     "empty": "እስካሁን የወጣ ሰርተፍኬት የለም።",

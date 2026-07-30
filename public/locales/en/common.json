@@ -237,6 +237,29 @@
     "void": "Void",
     "refunded": "Refunded"
   },
+  "refunds": {
+    "refundable": "Refundable payments",
+    "pending": "Pending refunds",
+    "request": "Refund",
+    "requesting": "Requesting…",
+    "requestTitle": "Request refund",
+    "requestSubtitle": "Refund a payment for {{learner}}.",
+    "amount": "Amount (ETB)",
+    "method": "Method",
+    "providerReversal": "Provider reversal",
+    "reason": "Reason",
+    "approve": "Approve",
+    "reject": "Reject",
+    "complete": "Mark completed",
+    "status": {
+      "requested": "Requested",
+      "approved": "Approved",
+      "processing": "Processing",
+      "completed": "Completed",
+      "rejected": "Rejected",
+      "failed": "Failed"
+    }
+  },
   "certificates": {
     "subtitle": "Issue and verify certificates and ID cards.",
     "empty": "No certificates issued yet.",
