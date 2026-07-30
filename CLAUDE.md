@@ -47,17 +47,23 @@ Management-API fallbacks instead of giving up:
 ```bash
 SUPABASE_ACCESS_TOKEN=sbp_… SUPABASE_PROJECT_REF=<ref> pnpm db:migrate --seed   # runs scripts/supabase-migrate.mjs over HTTPS /database/query
 pnpm db:bundle                                        # -> dist-sql/full-schema.sql, paste into dashboard SQL editor
+SUPABASE_ACCESS_TOKEN=sbp_… SUPABASE_PROJECT_REF=<ref> pnpm functions:deploy   # runs scripts/deploy-functions.mjs, same fallback for Edge Functions
 ```
 
 `scripts/supabase-migrate.mjs` records applied versions in
 `supabase_migrations.schema_migrations` using the same convention as the CLI,
 so a later `supabase db push` sees them as already applied and skips them.
 
-**Edge Function deploys need an unrestricted network.** The multipart deploy
-endpoint hangs/fails behind a TLS-re-terminating egress proxy, and the legacy
-single-file endpoint is gone (404). Schema migrations are unaffected — they go
-through `/database/query`, a plain JSON POST. See `docs/deployment.md` for the
-full runbook, credential list, and rollback steps.
+**`supabase functions deploy`'s multipart upload hangs/fails behind a
+TLS-re-terminating egress proxy** (confirmed both via the CLI and by hitting
+that endpoint directly) — `scripts/deploy-functions.mjs` is the fallback,
+using the Management API's single-file JSON endpoint instead (a plain POST,
+same shape as the migration runner's `/database/query` call). Since that
+endpoint takes one file's source as `body`, the script inlines each
+function's `_shared/*` imports and rewrites the bare `zod`/`@supabase/supabase-js`
+specifiers to explicit `npm:` ones — the endpoint's `import_map` field is
+accepted but not actually honored at boot time. See `docs/deployment.md` for
+the full runbook, credential list, and rollback steps.
 
 ```bash
 SUPABASE_URL=… SUPABASE_SERVICE_ROLE_KEY=… pnpm bootstrap:super-admin you@example.com

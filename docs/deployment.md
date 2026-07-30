@@ -54,13 +54,16 @@ to false, and the app will look "empty but logged in". This step is not optional
 
 ## 3. Deploy Edge Functions
 
-The two public endpoints must skip gateway JWT verification; the other ten
-authenticate inside `_shared/handler.ts`:
+Preferred, from a machine with the Supabase CLI. Three endpoints must skip
+gateway JWT verification (they gate on their own logic — token/signature,
+public lookup — instead); the other eleven authenticate inside
+`_shared/handler.ts`:
 
 ```bash
 supabase functions deploy submit-public-registration --project-ref <ref> --no-verify-jwt
 supabase functions deploy verify-certificate         --project-ref <ref> --no-verify-jwt
-supabase functions deploy --project-ref <ref>        # the remaining ten
+supabase functions deploy payment-webhook            --project-ref <ref> --no-verify-jwt
+supabase functions deploy --project-ref <ref>        # the remaining eleven
 ```
 
 `SUPABASE_URL`, `SUPABASE_ANON_KEY` and `SUPABASE_SERVICE_ROLE_KEY` are injected
@@ -68,12 +71,32 @@ into Edge Functions automatically — no `secrets set` needed for those. Use
 `supabase secrets set` only for third-party keys (Chapa, Telebirr, Afromessage,
 Resend, Turnstile) when those integrations are switched on.
 
-> **Run this from an unrestricted network.** The deploy endpoint
-> (`POST /v1/projects/{ref}/functions/deploy`) is a multipart upload that fails
-> with `TransportError` behind a TLS-re-terminating egress proxy — the assets
-> upload, then the final call dies. `--use-api` fails the same way, and the
-> legacy single-file endpoint now returns 500. Schema migrations are unaffected
-> (they go through `/database/query`, which is a plain JSON POST).
+If the CLI or a direct connection is unavailable (restricted network, CI
+sandbox) — the same situation migrations fall back for in step 1 — use the
+Management API deploy script instead:
+
+```bash
+SUPABASE_ACCESS_TOKEN=sbp_… SUPABASE_PROJECT_REF=<ref> pnpm functions:deploy
+# deploy just one:
+SUPABASE_ACCESS_TOKEN=sbp_… SUPABASE_PROJECT_REF=<ref> pnpm functions:deploy verify-certificate
+# preview without deploying:
+SUPABASE_ACCESS_TOKEN=sbp_… SUPABASE_PROJECT_REF=<ref> pnpm functions:deploy --dry-run
+```
+
+> **Why this works where `supabase functions deploy` doesn't.** The CLI's
+> deploy path is a multipart bundle upload
+> (`POST /v1/projects/{ref}/functions/deploy`), which fails with
+> `TransportError` behind a TLS-re-terminating egress proxy — confirmed both
+> via the CLI and by hitting that endpoint directly. `scripts/deploy-functions.mjs`
+> instead uses the Management API's single-file JSON endpoint
+> (`POST`/`PATCH /v1/projects/{ref}/functions`), which is a plain JSON POST
+> like the migration runner's `/database/query` call — no multipart involved.
+> Since that endpoint accepts exactly one file's source as `body`, the script
+> inlines each function's `_shared/*` imports before sending, and rewrites the
+> bare `zod`/`@supabase/supabase-js` specifiers to explicit `npm:` ones (the
+> endpoint's `import_map` field is accepted but not actually honored at boot
+> time — confirmed live: a bare `zod` import fails to resolve even with an
+> import_map attached, but resolves fine once rewritten to `npm:zod@3`).
 
 ## 4. Configure Auth
 

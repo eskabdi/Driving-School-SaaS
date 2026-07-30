@@ -15,6 +15,7 @@
     "bootstrap:super-admin": "tsx scripts/bootstrap-super-admin.ts",
     "db:migrate": "NODE_USE_ENV_PROXY=1 node scripts/supabase-migrate.mjs",
     "db:bundle": "node scripts/build-sql-bundle.mjs",
+    "functions:deploy": "NODE_USE_ENV_PROXY=1 node scripts/deploy-functions.mjs",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\""
   },
   "dependencies": {
